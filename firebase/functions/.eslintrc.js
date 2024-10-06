@@ -5,11 +5,11 @@ module.exports = {
     node: true,
   },
   extends: [
-    "eslint:recommended",
     "plugin:import/errors",
     "plugin:import/warnings",
     "plugin:import/typescript",
-    "google",
+    "airbnb",
+    "prettier",
     "plugin:@typescript-eslint/recommended",
   ],
   parser: "@typescript-eslint/parser",
@@ -21,13 +21,13 @@ module.exports = {
     "/lib/**/*", // Ignore built files.
     "/generated/**/*", // Ignore generated files.
   ],
-  plugins: [
-    "@typescript-eslint",
-    "import",
-  ],
+  plugins: ["@typescript-eslint", "import"],
   rules: {
-    "quotes": ["error", "double"],
+    quotes: ["error", "double"],
     "import/no-unresolved": 0,
-    "indent": ["error", 2],
+    "import/extensions": "off",
+    indent: ["error", 2],
+    "no-console": "error",
+    "import/prefer-default-export": "off",
   },
 };

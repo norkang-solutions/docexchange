@@ -10,6 +10,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@eslint/eslintrc": "^3.1.0",
     "next": "14.2.14",
     "react": "^18",
     "react-dom": "^18"
@@ -31,7 +32,7 @@
   },
   "lint-staged": {
     "**/*.{ts,tsx}": [
-      "eslint"
+      "eslint --ignore-path .eslintignore"
     ],
     "**/*.{ts,tsx,json}": [
       "prettier --write --ignore-unknown"
