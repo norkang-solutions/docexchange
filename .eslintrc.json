@@ -1,21 +1,31 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "next/typescript",
-    "airbnb",
-    "airbnb/hooks",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "plugin:jsx-a11y/recommended",
-    "prettier"
-  ],
-  "parser": "@typescript-eslint/parser",
-  "rules": {
-    "react/react-in-jsx-scope": "off",
-    "no-console": "error",
-    "react/require-default-props": "off",
-    "react/prop-types": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }]
-  }
+    "extends": [
+        "next/core-web-vitals",
+        "next/typescript",
+        "airbnb",
+        "airbnb/hooks",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended",
+        "plugin:jsx-a11y/recommended",
+        "prettier"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "rules": {
+        "react/react-in-jsx-scope": "off",
+        "no-console": "error",
+        "react/require-default-props": "off",
+        "react/prop-types": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "jsx": "never",
+                "ts": "never",
+                "tsx": "never"
+            }
+        ]
+    }
 }
