@@ -2,9 +2,11 @@ name: Build and Deploy Firebase Functions
 
 on:
     push:
-        branches: 
+        branches:
             - main
             - ci/add-firebase-deploy-pipeline
+        paths:
+            - firebase/**
     workflow_dispatch:
 
 env:
@@ -24,8 +26,7 @@ jobs:
             - name: Set up pnpnm
               uses: pnpm/action-setup@v4
               with:
-                version: 9
-
+                  version: 9
 
             - name: Set up Node.js
               uses: actions/setup-node@v4
