@@ -46,10 +46,11 @@ export default function useSignUp(): SignUpReturn {
             if (err instanceof FirebaseError) {
                 if (err.code === "auth/email-already-in-use") {
                     setErrors({ email: "Email already in use" });
-                } else if (err.code === "already-exists") {
-                    setErrors({ username: "Username already taken" });
                 } else {
-                    setErrors({ unknown: "An error occurred during sign up" });
+                    setErrors({
+                        unknown:
+                            "Our auth provider is experiencing issues, please contact support",
+                    });
                 }
             } else {
                 setErrors({
