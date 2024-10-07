@@ -13,7 +13,8 @@ export default function Button({ children, ...props }: ButtonProps) {
             className={twJoin(
                 "px-3 py-2 text-base font-medium text-white bg-emerald-800 rounded-lg",
                 "transition-colors duration-300",
-                "hover:bg-emerald-900"
+                "hover:bg-emerald-900",
+                "disabled:bg-slate-200 disabled:text-slate-400 disabled:cursor-not-allowed"
             )}
             {...props}
         >
