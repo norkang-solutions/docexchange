@@ -5,7 +5,7 @@ import { FirebaseError } from "firebase/app";
 import {
     SignUpFormErrors,
     signUpSchema,
-} from "@/app/_entities/models/sign-up-form";
+} from "@/app/_entities/models/auth/sign-up-form";
 
 type SignUpReturn = {
     signUp: (formData: FormData) => Promise<void>;
