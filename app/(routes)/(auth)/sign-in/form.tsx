@@ -6,11 +6,14 @@ import Button from "@/app/_components/button";
 import useSignIn from "@/app/_hooks/use-sign-in";
 import ErrorP from "@/app/_components/error-p";
 import LoadingSpinner from "@/app/_components/loading-spinner";
+import { useAuth } from "@/app/_contexts/auth-context";
+import AlreadySignedInAlert from "../already-signed-in-alert";
 
 type SignInFormProps = FormHTMLAttributes<HTMLFormElement>;
 
 export default function SignInForm({ ...props }: SignInFormProps) {
     const id = useId();
+    const { user, loading: isLoadingUser } = useAuth();
 
     const { signIn, isLoading, errors } = useSignIn();
 
@@ -20,6 +23,8 @@ export default function SignInForm({ ...props }: SignInFormProps) {
         signIn(formData);
     };
 
+    if (isLoadingUser) return <LoadingSpinner />;
+
     return (
         <form
             id="sign-in-form"
@@ -27,21 +32,28 @@ export default function SignInForm({ ...props }: SignInFormProps) {
             onSubmit={handleSubmit}
             {...props}
         >
-            <Input
-                label="Email"
-                type="email"
-                id={`email-${id}`}
-                name="email"
-                error={errors?.email}
-            />
-            <Input
-                label="Password"
-                type="password"
-                id={`password-${id}`}
-                name="password"
-                error={errors?.password}
-            />
-            <Button type="submit" disabled={isLoading}>
+            {!user ? (
+                <>
+                    <Input
+                        label="Email"
+                        type="email"
+                        id={`email-${id}`}
+                        name="email"
+                        error={errors?.email}
+                    />
+                    <Input
+                        label="Password"
+                        type="password"
+                        id={`password-${id}`}
+                        name="password"
+                        error={errors?.password}
+                    />
+                </>
+            ) : (
+                <AlreadySignedInAlert username={user.username} />
+            )}
+
+            <Button type="submit" disabled={isLoading || !!user}>
                 {isLoading ? <LoadingSpinner /> : "Sign In"}
             </Button>
             {errors?.unknown && <ErrorP>{errors.unknown}</ErrorP>}

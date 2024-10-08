@@ -6,12 +6,15 @@ import { FormEvent, FormHTMLAttributes, useId } from "react";
 import ErrorP from "@/app/_components/error-p";
 import useSignUp from "@/app/_hooks/use-sign-up";
 import LoadingSpinner from "@/app/_components/loading-spinner";
+import { useAuth } from "@/app/_contexts/auth-context";
+import AlreadySignedInAlert from "../already-signed-in-alert";
 
 type SignUpFormProps = FormHTMLAttributes<HTMLFormElement>;
 
 export default function SignUpForm({ ...props }: SignUpFormProps) {
     const id = useId();
 
+    const { user, loading: isLoadingUser } = useAuth();
     const { signUp, isLoading, errors } = useSignUp();
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -20,6 +23,8 @@ export default function SignUpForm({ ...props }: SignUpFormProps) {
         signUp(formData);
     };
 
+    if (isLoadingUser) return <LoadingSpinner />;
+
     return (
         <form
             id="sign-up-form"
@@ -27,35 +32,42 @@ export default function SignUpForm({ ...props }: SignUpFormProps) {
             onSubmit={handleSubmit}
             {...props}
         >
-            <Input
-                label="Email"
-                type="email"
-                id={`email-${id}`}
-                name="email"
-                error={errors?.email}
-            />
-            <Input
-                label="Username"
-                type="text"
-                id={`username-${id}`}
-                name="username"
-                error={errors?.username}
-            />
-            <Input
-                label="Password"
-                type="password"
-                id={`password-${id}`}
-                name="password"
-                error={errors?.password}
-            />
-            <Input
-                label="Confirm Password"
-                type="password"
-                id={`confirm-password-${id}`}
-                name="confirmPassword"
-                error={errors?.confirmPassword}
-            />
-            <Button type="submit" disabled={isLoading}>
+            {!user ? (
+                <>
+                    <Input
+                        label="Email"
+                        type="email"
+                        id={`email-${id}`}
+                        name="email"
+                        error={errors?.email}
+                    />
+                    <Input
+                        label="Username"
+                        type="text"
+                        id={`username-${id}`}
+                        name="username"
+                        error={errors?.username}
+                    />
+                    <Input
+                        label="Password"
+                        type="password"
+                        id={`password-${id}`}
+                        name="password"
+                        error={errors?.password}
+                    />
+                    <Input
+                        label="Confirm Password"
+                        type="password"
+                        id={`confirm-password-${id}`}
+                        name="confirmPassword"
+                        error={errors?.confirmPassword}
+                    />
+                </>
+            ) : (
+                <AlreadySignedInAlert username={user.username} />
+            )}
+
+            <Button type="submit" disabled={isLoading || !!user}>
                 {isLoading ? <LoadingSpinner /> : "Sign Up"}
             </Button>
             {errors?.unknown && <ErrorP>{errors.unknown}</ErrorP>}
