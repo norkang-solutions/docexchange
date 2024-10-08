@@ -66,7 +66,6 @@ export default function useSignUp(): SignUpReturn {
             setErrors({
                 unknown: "Something went wrong, please contact support",
             });
-            return;
         } finally {
             setIsLoading(false);
         }

@@ -43,8 +43,6 @@ export default async function createUser({
         await deleteUser(user);
         throw error;
     }
-
-    return user;
 }
 
 const checkIfUsernameExist = async (username: string) => {
