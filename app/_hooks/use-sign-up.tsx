@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "@/firebase/client";
 import { FirebaseError } from "firebase/app";
 import {
     SignUpFormErrors,
     signUpSchema,
 } from "@/app/_entities/models/auth/sign-up-form";
+import UsernameAlreadyTakenError from "../_entities/errors/username-already-taken-error";
+import createUser from "../../firebase/firestore/create-user";
 
 type SignUpReturn = {
     signUp: (formData: FormData) => Promise<void>;
@@ -34,29 +34,34 @@ export default function useSignUp(): SignUpReturn {
             return;
         }
 
-        const { email, password } = parsedData;
+        const { email, password, username } = parsedData;
 
         try {
-            // TODO: Check if username is already taken
-
-            await createUserWithEmailAndPassword(auth, email, password);
-
-            // TODO: Create the user in Firestore here, with the username
+            await createUser({
+                email,
+                password,
+                username,
+            });
         } catch (err) {
+            if (err instanceof UsernameAlreadyTakenError) {
+                setErrors({ username: "Username already taken" });
+                return;
+            }
             if (err instanceof FirebaseError) {
                 if (err.code === "auth/email-already-in-use") {
                     setErrors({ email: "Email already in use" });
-                } else {
-                    setErrors({
-                        unknown:
-                            "Our auth provider is experiencing issues, please contact support",
-                    });
+                    return;
                 }
-            } else {
                 setErrors({
-                    unknown: "Something went wrong, please contact support",
+                    unknown:
+                        "Our auth provider is experiencing issues, please contact support",
                 });
+                return;
             }
+            setErrors({
+                unknown: "Something went wrong, please contact support",
+            });
+            return;
         } finally {
             setIsLoading(false);
         }
