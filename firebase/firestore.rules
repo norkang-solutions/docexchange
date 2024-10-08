@@ -2,8 +2,33 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
+    // Default deny all access
     match /{document=**} {
       allow read, write: if false;
+    }
+    
+    // Function to check if the user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Function to check if the user is accessing their own document
+    function isUserDocument(userId) {
+      return request.auth.uid == userId;
+    }
+
+    // Function to validate the user document schema
+    function userSchema() {
+      return request.resource.data.keys().hasAll(["username", "createdAt", "createdBy"]) &&
+             request.resource.data.keys().size() == 3;
+    }
+
+    match /users/{userId} {
+      allow read: if true;
+      
+      allow create, write: if isAuthenticated() && isUserDocument(userId) && userSchema();
+      
+      allow delete: if isAuthenticated() && isUserDocument(userId);
     }
   }
 }
