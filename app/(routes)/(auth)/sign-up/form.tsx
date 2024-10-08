@@ -5,6 +5,7 @@ import Input from "@/app/_components/input";
 import { FormEvent, FormHTMLAttributes, useId } from "react";
 import ErrorP from "@/app/_components/error-p";
 import useSignUp from "@/app/_hooks/use-sign-up";
+import LoadingSpinner from "@/app/_components/loading-spinner";
 
 type SignUpFormProps = FormHTMLAttributes<HTMLFormElement>;
 
@@ -21,6 +22,7 @@ export default function SignUpForm({ ...props }: SignUpFormProps) {
 
     return (
         <form
+            id="sign-up-form"
             className="flex flex-col gap-4 max-w-xs w-full"
             onSubmit={handleSubmit}
             {...props}
@@ -54,7 +56,7 @@ export default function SignUpForm({ ...props }: SignUpFormProps) {
                 error={errors?.confirmPassword}
             />
             <Button type="submit" disabled={isLoading}>
-                {isLoading ? "Loading..." : "Sign Up"}
+                {isLoading ? <LoadingSpinner /> : "Sign Up"}
             </Button>
             {errors?.unknown && <ErrorP>{errors.unknown}</ErrorP>}
         </form>
