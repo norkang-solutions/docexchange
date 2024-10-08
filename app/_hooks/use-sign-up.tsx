@@ -6,6 +6,7 @@ import {
 } from "@/app/_entities/models/auth/sign-up-form";
 import UsernameAlreadyTakenError from "../_entities/errors/username-already-taken-error";
 import createUser from "../../firebase/firestore/create-user";
+import useWait from "./use-wait";
 
 type SignUpReturn = {
     signUp: (formData: FormData) => Promise<void>;
@@ -17,9 +18,13 @@ export default function useSignUp(): SignUpReturn {
     const [isLoading, setIsLoading] = useState(false);
     const [errors, setErrors] = useState<SignUpFormErrors>({});
 
+    const wait = useWait();
+
     const signUp = async (formData: FormData) => {
         setIsLoading(true);
         setErrors({});
+
+        await wait(500);
 
         const data = Object.fromEntries(formData.entries());
 

@@ -6,6 +6,7 @@ import {
     signInSchema,
     SignInFormErrors,
 } from "../_entities/models/auth/sign-in-form";
+import useWait from "./use-wait";
 
 type SignInReturn = {
     signIn: (formData: FormData) => Promise<void>;
@@ -17,9 +18,13 @@ export default function useSignIn(): SignInReturn {
     const [isLoading, setIsLoading] = useState(false);
     const [errors, setErrors] = useState<SignInFormErrors>({});
 
+    const wait = useWait();
+
     const signIn = async (formData: FormData) => {
         setIsLoading(true);
         setErrors({});
+
+        await wait(500);
 
         const data = Object.fromEntries(formData.entries());
 
