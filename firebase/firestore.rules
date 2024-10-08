@@ -17,10 +17,31 @@ service cloud.firestore {
       return request.auth.uid == userId;
     }
 
+    function isValidUsername(username) {
+      return username is string &&
+             username.size() >= 3 &&
+             username.size() <= 30 &&
+             username.matches('^[a-zA-Z0-9_]+$');
+    }
+
+    function isValidCreatedBy(createdBy) {
+      return createdBy is string &&
+             createdBy.size() == 28 &&
+             createdBy.matches('^[a-zA-Z0-9_]+$'); 
+    }
+
+    function isValidCreatedAt(createdAt) {
+      // Allow serverTimestamp() which is null during validation
+      return createdAt == null || createdAt is timestamp;
+    }
+    
     // Function to validate the user document schema
     function userSchema() {
       return request.resource.data.keys().hasAll(["username", "createdAt", "createdBy"]) &&
-             request.resource.data.keys().size() == 3;
+             request.resource.data.keys().size() == 3 &&
+             isValidUsername(request.resource.data.username) &&
+             isValidCreatedBy(request.resource.data.createdBy) &&
+             isValidCreatedAt(request.resource.data.createdAt);
     }
 
     match /users/{userId} {

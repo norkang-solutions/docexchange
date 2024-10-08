@@ -5,8 +5,8 @@ import {
     doc,
     getDocs,
     query,
+    serverTimestamp,
     setDoc,
-    Timestamp,
     where,
 } from "firebase/firestore";
 import UsernameAlreadyTakenError from "../../app/_entities/errors/username-already-taken-error";
@@ -36,7 +36,7 @@ export default async function createUser({
     try {
         await setDoc(doc(db, "users", uid), {
             username,
-            createdAt: Timestamp.now(),
+            createdAt: serverTimestamp(),
             createdBy: uid,
         });
     } catch (error) {
