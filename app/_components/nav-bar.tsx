@@ -4,7 +4,8 @@ import { AuthProvider, useAuth } from "../_contexts/auth-context";
 import Button from "./button";
 
 function SignOutButton() {
-    const { signOut } = useAuth();
+    const { signOut, user } = useAuth();
+    if (!user) return null;
     return <Button onClick={signOut}>Sign Out</Button>;
 }
 
