@@ -1,3 +1,4 @@
+import { ROUTES } from "@/app/_constants/routes";
 import { LangParams } from "@/app/_utils/types";
 import { getDictionary } from "@/app/dictionaries";
 import AboutTemplate from "../about-template";
@@ -6,7 +7,16 @@ export default function About({ params: { lang } }: LangParams) {
     const dict = getDictionary(lang);
 
     return (
-        <AboutTemplate title={dict.about_us}>
+        <AboutTemplate
+            cards={[
+                {
+                    title: "Lorem ipsum dolor",
+                    description: "Lorem ipsum dolor",
+                    link: ROUTES.ABOUT_TEAM,
+                },
+            ]}
+            title={dict.about_us}
+        >
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident,
             voluptate aspernatur officia, nobis quia praesentium qui corporis
             repudiandae autem enim ex et quos sint, voluptatum perspiciatis quo
