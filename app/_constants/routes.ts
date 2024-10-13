@@ -5,4 +5,6 @@ export enum ROUTES {
     PRIVACY_POLICY = "/privacy-policy",
     TERMS_AND_CONDITIONS = "/terms-and-conditions",
     DASHBOARD = "/dashboard",
+    EXPLORE = "/explore",
+    UPLOAD = "/upload",
 }
