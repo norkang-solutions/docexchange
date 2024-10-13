@@ -11,6 +11,7 @@ import Checkbox from "@/app/_components/checkbox";
 import Link from "next/link";
 import { Dictionary } from "@/app/_dictionaries/type";
 import { ROUTES } from "@/app/_constants/routes";
+import { useRouter } from "next/navigation";
 
 type SignUpFormProps = FormHTMLAttributes<HTMLFormElement> & {
     dict: Dictionary;
@@ -18,6 +19,7 @@ type SignUpFormProps = FormHTMLAttributes<HTMLFormElement> & {
 
 export default function SignUpForm({ dict, ...props }: SignUpFormProps) {
     const id = useId();
+    const router = useRouter();
 
     const { user, loading: isLoadingUser } = useAuth();
     const { signUp, isLoading, errors } = useSignUp();
@@ -27,6 +29,11 @@ export default function SignUpForm({ dict, ...props }: SignUpFormProps) {
         const formData = new FormData(event.currentTarget);
         signUp(formData);
     };
+
+    if (user) {
+        router.push(ROUTES.DASHBOARD);
+        return null;
+    }
 
     if (isLoadingUser) return <LoadingSpinner />;
 

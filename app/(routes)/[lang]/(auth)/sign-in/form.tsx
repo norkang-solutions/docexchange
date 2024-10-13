@@ -10,6 +10,7 @@ import { useAuth } from "@/app/_contexts/auth-context";
 import { Dictionary } from "@/app/_dictionaries/type";
 import Link from "next/link";
 import { ROUTES } from "@/app/_constants/routes";
+import { useRouter } from "next/navigation";
 
 type SignInFormProps = FormHTMLAttributes<HTMLFormElement> & {
     dict: Dictionary;
@@ -17,6 +18,7 @@ type SignInFormProps = FormHTMLAttributes<HTMLFormElement> & {
 
 export default function SignInForm({ dict, ...props }: SignInFormProps) {
     const id = useId();
+    const router = useRouter();
 
     const { user, loading: isLoadingUser } = useAuth();
 
@@ -27,6 +29,11 @@ export default function SignInForm({ dict, ...props }: SignInFormProps) {
         const formData = new FormData(event.currentTarget);
         signIn(formData);
     };
+
+    if (user) {
+        router.push(ROUTES.DASHBOARD);
+        return null;
+    }
 
     if (isLoadingUser) return <LoadingSpinner />;
 

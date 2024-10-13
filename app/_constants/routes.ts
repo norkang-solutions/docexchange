@@ -4,4 +4,5 @@ export enum ROUTES {
     SIGN_IN = "/sign-in",
     PRIVACY_POLICY = "/privacy-policy",
     TERMS_AND_CONDITIONS = "/terms-and-conditions",
+    DASHBOARD = "/dashboard",
 }
