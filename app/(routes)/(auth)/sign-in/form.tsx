@@ -7,7 +7,6 @@ import useSignIn from "@/app/_hooks/use-sign-in";
 import ErrorP from "@/app/_components/error-p";
 import LoadingSpinner from "@/app/_components/loading-spinner";
 import { useAuth } from "@/app/_contexts/auth-context";
-import AlreadySignedInAlert from "../already-signed-in-alert";
 
 type SignInFormProps = FormHTMLAttributes<HTMLFormElement>;
 
@@ -32,26 +31,20 @@ export default function SignInForm({ ...props }: SignInFormProps) {
             onSubmit={handleSubmit}
             {...props}
         >
-            {!user ? (
-                <>
-                    <Input
-                        label="Email"
-                        type="email"
-                        id={`email-${id}`}
-                        name="email"
-                        error={errors?.email}
-                    />
-                    <Input
-                        label="Password"
-                        type="password"
-                        id={`password-${id}`}
-                        name="password"
-                        error={errors?.password}
-                    />
-                </>
-            ) : (
-                <AlreadySignedInAlert username={user.username} />
-            )}
+            <Input
+                label="Email"
+                type="email"
+                id={`email-${id}`}
+                name="email"
+                error={errors?.email}
+            />
+            <Input
+                label="Password"
+                type="password"
+                id={`password-${id}`}
+                name="password"
+                error={errors?.password}
+            />
 
             <Button type="submit" disabled={isLoading || !!user}>
                 {isLoading ? <LoadingSpinner /> : "Sign In"}

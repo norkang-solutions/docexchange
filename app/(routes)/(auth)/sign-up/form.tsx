@@ -7,7 +7,8 @@ import ErrorP from "@/app/_components/error-p";
 import useSignUp from "@/app/_hooks/use-sign-up";
 import LoadingSpinner from "@/app/_components/loading-spinner";
 import { useAuth } from "@/app/_contexts/auth-context";
-import AlreadySignedInAlert from "../already-signed-in-alert";
+import CheckmarkCheckbox from "@/app/_components/checkbox";
+import Link from "next/link";
 
 type SignUpFormProps = FormHTMLAttributes<HTMLFormElement>;
 
@@ -32,40 +33,53 @@ export default function SignUpForm({ ...props }: SignUpFormProps) {
             onSubmit={handleSubmit}
             {...props}
         >
-            {!user ? (
-                <>
-                    <Input
-                        label="Email"
-                        type="email"
-                        id={`email-${id}`}
-                        name="email"
-                        error={errors?.email}
-                    />
-                    <Input
-                        label="Username"
-                        type="text"
-                        id={`username-${id}`}
-                        name="username"
-                        error={errors?.username}
-                    />
-                    <Input
-                        label="Password"
-                        type="password"
-                        id={`password-${id}`}
-                        name="password"
-                        error={errors?.password}
-                    />
-                    <Input
-                        label="Confirm Password"
-                        type="password"
-                        id={`confirm-password-${id}`}
-                        name="confirmPassword"
-                        error={errors?.confirmPassword}
-                    />
-                </>
-            ) : (
-                <AlreadySignedInAlert username={user.username} />
-            )}
+            <Input
+                label="Email"
+                type="email"
+                id={`email-${id}`}
+                name="email"
+                error={errors?.email}
+            />
+            <Input
+                label="Username"
+                type="text"
+                id={`username-${id}`}
+                name="username"
+                error={errors?.username}
+            />
+            <Input
+                label="Password"
+                type="password"
+                id={`password-${id}`}
+                name="password"
+                error={errors?.password}
+            />
+            <Input
+                label="Confirm Password"
+                type="password"
+                id={`confirm-password-${id}`}
+                name="confirmPassword"
+                error={errors?.confirmPassword}
+            />
+            <CheckmarkCheckbox
+                id={`terms-and-conditions-${id}`}
+                name="termsAndConditions"
+            >
+                I agree to the{" "}
+                <Link
+                    href="/terms"
+                    className="underline underline-offset-4 decoration-emerald-600"
+                >
+                    terms and conditions
+                </Link>{" "}
+                and{" "}
+                <Link
+                    href="/privacy"
+                    className="underline underline-offset-4 decoration-emerald-600"
+                >
+                    privacy policy
+                </Link>
+            </CheckmarkCheckbox>
 
             <Button type="submit" disabled={isLoading || !!user}>
                 {isLoading ? <LoadingSpinner /> : "Sign Up"}
