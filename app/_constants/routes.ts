@@ -7,4 +7,7 @@ export enum ROUTES {
     DASHBOARD = "/dashboard",
     EXPLORE = "/explore",
     CONTRIBUTE = "/contribute",
+    ABOUT = "/about",
+    ABOUT_US = `${ABOUT}/about-us`,
+    ABOUT_TEAM = `${ABOUT_US}/team`,
 }

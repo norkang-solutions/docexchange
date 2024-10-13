@@ -41,4 +41,8 @@ export const nbNO: Dictionary = {
         "Ukjent feil under registrering. Vennligst kontakt support.",
     username_already_taken: "Brukernavnet er allerede i bruk",
     email_already_in_use: "E-postadressen er allerede i bruk",
+
+    // about
+    about_us: "Om oss",
+    team: "Team",
 };

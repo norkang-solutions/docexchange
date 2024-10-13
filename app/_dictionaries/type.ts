@@ -36,4 +36,8 @@ export type Dictionary = {
     email_already_in_use: string;
     unknown_error_while_signing_up_please_contact_support: string;
     username_already_taken: string;
+
+    // about
+    about_us: string;
+    team: string;
 };

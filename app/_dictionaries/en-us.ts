@@ -45,4 +45,7 @@ export const enUS: Dictionary = {
     unknown_error_while_signing_up_please_contact_support:
         "Unknown error while signing up. Please contact support.",
     username_already_taken: "Username already taken",
+
+    about_us: "About us",
+    team: "Team",
 };
