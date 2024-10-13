@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import ArrowDownIcon from "../_assets/icons/arrow-down-icon";
 
 type DropdownMenuProps = {
@@ -15,13 +15,14 @@ export default function DropdownMenu({
     children,
 }: DropdownMenuProps) {
     const currentPath = usePathname();
-    const open = currentPath.includes(path);
+    const [open, setOpen] = useState(currentPath.includes(path));
 
     return (
         <div className="flex flex-col">
             <Link
                 className="flex flex-row gap-2 items-center justify-between"
                 href={path}
+                onClick={() => setOpen(!open)}
             >
                 <p className="hover:text-gray-500">{title}</p>
                 <ArrowDownIcon
