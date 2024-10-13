@@ -1,8 +1,7 @@
-export enum REGION {
-    EUROPE_WEST1 = "europe-west1",
-}
-export enum COLLECTION {
-    USERS = "users",
-}
+const REGION = "europe-west1";
 
-export const CORS = ["http://localhost:3000", "https://staging.docexchange.io"];
+const USERS_COLLECTION = "users";
+
+const CORS = ["http://localhost:3000", "https://staging.docexchange.io"];
+
+export { REGION, USERS_COLLECTION, CORS };
