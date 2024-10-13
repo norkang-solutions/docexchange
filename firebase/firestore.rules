@@ -2,8 +2,54 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
+    // Default deny all access
     match /{document=**} {
       allow read, write: if false;
+    }
+    
+    // Function to check if the user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Function to check if the user is accessing their own document
+    function isUserDocument(userId) {
+      return request.auth.uid == userId;
+    }
+
+    function isValidUsername(username) {
+      return username is string &&
+             username.size() >= 3 &&
+             username.size() <= 30 &&
+             username.matches('^[a-zA-Z0-9_]+$');
+    }
+
+    function isValidCreatedBy(createdBy) {
+      return createdBy is string &&
+             createdBy.size() == 28 &&
+             createdBy.matches('^[a-zA-Z0-9_]+$'); 
+    }
+
+    function isValidCreatedAt(createdAt) {
+      // Allow serverTimestamp() which is null during validation
+      return createdAt == null || createdAt is timestamp;
+    }
+    
+    // Function to validate the user document schema
+    function userSchema() {
+      return request.resource.data.keys().hasAll(["username", "createdAt", "createdBy"]) &&
+             request.resource.data.keys().size() == 3 &&
+             isValidUsername(request.resource.data.username) &&
+             isValidCreatedBy(request.resource.data.createdBy) &&
+             isValidCreatedAt(request.resource.data.createdAt);
+    }
+
+    match /users/{userId} {
+      allow read: if true;
+      
+      allow create, write: if isAuthenticated() && isUserDocument(userId) && userSchema();
+      
+      allow delete: if isAuthenticated() && isUserDocument(userId);
     }
   }
 }
