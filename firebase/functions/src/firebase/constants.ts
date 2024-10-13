@@ -5,4 +5,4 @@ export enum COLLECTION {
     USERS = "users",
 }
 
-export const CORS = ["http://localhost:3000"];
+export const CORS = ["http://localhost:3000", "https://staging.docexchange.io"];
