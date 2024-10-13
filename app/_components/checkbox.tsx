@@ -15,12 +15,12 @@ export default function CheckmarkCheckbox({
         <div className="w-full flex flex-col gap-2">
             <div className="flex items-center flex gap-2">
                 <input
-                    className="peer relative appearance-none shrink-0 w-5 h-5 mt-1 checked:bg-emerald-800 border border-slate-300 rounded-md checked:border-emerald-800 focus:outline-none focus:ring-1 focus:ring-slate-900 focus:border-slate-900"
+                    className="peer relative appearance-none shrink-0 w-5 h-5 mt-1 checked:bg-emerald-500 border border-slate-300 rounded-md checked:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-slate-900 focus:border-slate-900"
                     type="checkbox"
                     {...props}
                 />
                 <svg
-                    className="absolute p-1 w-5 h-5 pointer-events-none stroke-white fill-none peer-checked:!fill-emerald-800 mt-1"
+                    className="absolute p-1 w-5 h-5 pointer-events-none stroke-white fill-none peer-checked:!fill-emerald-500 mt-1"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"
                     height="24"

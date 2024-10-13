@@ -75,14 +75,14 @@ export default function SignUpForm({ dict, ...props }: SignUpFormProps) {
                 I agree to the{" "}
                 <Link
                     href="/terms"
-                    className="underline underline-offset-4 decoration-emerald-600"
+                    className="underline underline-offset-4 decoration-emerald-500"
                 >
                     terms and conditions
                 </Link>{" "}
                 and{" "}
                 <Link
                     href="/privacy"
-                    className="underline underline-offset-4 decoration-emerald-600"
+                    className="underline underline-offset-4 decoration-emerald-500"
                 >
                     privacy policy
                 </Link>
