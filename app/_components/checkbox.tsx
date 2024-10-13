@@ -1,16 +1,12 @@
 import { InputHTMLAttributes, ReactNode } from "react";
 import ErrorP from "./error-p";
 
-type CheckmarkCheckboxProps = InputHTMLAttributes<HTMLInputElement> & {
+type CheckboxProps = InputHTMLAttributes<HTMLInputElement> & {
     error?: string;
     children: ReactNode;
 };
 
-export default function CheckmarkCheckbox({
-    error,
-    children,
-    ...props
-}: CheckmarkCheckboxProps) {
+export default function Checkbox({ error, children, ...props }: CheckboxProps) {
     return (
         <div className="w-full flex flex-col gap-2">
             <div className="flex items-center flex gap-2">

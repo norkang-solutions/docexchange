@@ -7,7 +7,7 @@ import ErrorP from "@/app/_components/error-p";
 import useSignUp from "@/app/_hooks/use-sign-up";
 import LoadingSpinner from "@/app/_components/loading-spinner";
 import { useAuth } from "@/app/_contexts/auth-context";
-import CheckmarkCheckbox from "@/app/_components/checkbox";
+import Checkbox from "@/app/_components/checkbox";
 import Link from "next/link";
 import { Dictionary } from "@/app/_dictionaries/type";
 import { ROUTES } from "@/app/_constants/routes";
@@ -65,7 +65,7 @@ export default function SignUpForm({ dict, ...props }: SignUpFormProps) {
                 name="confirmPassword"
                 error={errors?.confirmPassword && dict[errors.confirmPassword]}
             />
-            <CheckmarkCheckbox
+            <Checkbox
                 error={
                     errors?.termsAndConditions &&
                     dict[errors.termsAndConditions]
@@ -87,7 +87,7 @@ export default function SignUpForm({ dict, ...props }: SignUpFormProps) {
                 >
                     {dict.privacy_policy}
                 </Link>
-            </CheckmarkCheckbox>
+            </Checkbox>
 
             <Button type="submit" disabled={isLoading || !!user}>
                 {isLoading ? <LoadingSpinner /> : "Sign Up"}
