@@ -39,5 +39,9 @@ export type Dictionary = {
 
     // about
     about_us: string;
+    docexchange_is_a_student_powered_study_platform: string;
+    at_docexchange_we_believe_in_the_power_of_collaborative_learning: string;
     team: string;
+    get_to_know_our_team: string;
+    are_you_interested_in_joining_our_team: string;
 };

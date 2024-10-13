@@ -45,4 +45,11 @@ export const nbNO: Dictionary = {
     // about
     about_us: "Om oss",
     team: "Team",
+    docexchange_is_a_student_powered_study_platform:
+        "DocExchange er en studentdrevet studieplattform. Vi har som mål å gi studenter en plattform for å dele arbeidet sitt og tjene penger. Vi har også som mål å gi studenter en plattform for å få tilgang til studiematerialer fra sine medstudenter.",
+    at_docexchange_we_believe_in_the_power_of_collaborative_learning:
+        "Hos DocExchange tror vi på kraften av samarbeidslæring. Vår misjon er å transformere den tradisjonelle læringsprosessen ved å fremme et miljø der studenter kan samarbeide, dele innsikt og få tilgang til varierte perspektiver på emner de studerer. Ved å tjene penger på delte ressurser oppfordrer vi studenter til å produsere kvalitetsinnhold.",
+    get_to_know_our_team: "Bli kjent med teamet vårt",
+    are_you_interested_in_joining_our_team:
+        "Er du interessert i å bli med i teamet vårt? I så fall, kontakt en av oss!",
 };

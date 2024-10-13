@@ -48,4 +48,11 @@ export const enUS: Dictionary = {
 
     about_us: "About us",
     team: "Team",
+    docexchange_is_a_student_powered_study_platform:
+        "DocExchange is a student-powered study platform. We aim to provide students with a platform to share their work and earn money. We also aim to provide students with a platform to access study materials from their peers.",
+    at_docexchange_we_believe_in_the_power_of_collaborative_learning:
+        "At DocExchange, we believe in the power of collaborative learning. Our mission is to transform the traditional learning process by fostering an environment where students can collaborate, share insights, and access varied perspectives on topics they study. By monetizing their shared resources, we encourage students to produce quality content.",
+    get_to_know_our_team: "Get to know our team",
+    are_you_interested_in_joining_our_team:
+        "Are you interested in joining our team? Then contact one of us.",
 };
