@@ -12,6 +12,8 @@ export type Dictionary = {
     terms_and_conditions: string;
     and: string;
     privacy_policy: string;
+    do_you_already_have_an_account: string;
+    do_you_not_have_an_account: string;
 
     // zod
     invalid_email_address: string;

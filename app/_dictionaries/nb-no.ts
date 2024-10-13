@@ -13,6 +13,8 @@ export const nbNO: Dictionary = {
     terms_and_conditions: "vilkårene for bruk",
     and: "og",
     privacy_policy: "personvernerklæringen",
+    do_you_already_have_an_account: "Har du allerede en konto?",
+    do_you_not_have_an_account: "Har du ikke en konto?",
 
     // zod
     invalid_email_address: "Ugyldig e-postadresse",

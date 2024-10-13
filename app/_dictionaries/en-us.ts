@@ -13,6 +13,8 @@ export const enUS: Dictionary = {
     terms_and_conditions: "terms and conditions",
     and: "and",
     privacy_policy: "privacy policy",
+    do_you_already_have_an_account: "Do you already have an account?",
+    do_you_not_have_an_account: "Do you not have an account?",
 
     // zod
     invalid_email_address: "Invalid email address",

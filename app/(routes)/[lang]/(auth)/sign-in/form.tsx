@@ -8,8 +8,8 @@ import ErrorP from "@/app/_components/error-p";
 import LoadingSpinner from "@/app/_components/loading-spinner";
 import { useAuth } from "@/app/_contexts/auth-context";
 import { Dictionary } from "@/app/_dictionaries/type";
-import { signOut } from "firebase/auth";
-import { auth } from "@/firebase/client";
+import Link from "next/link";
+import { ROUTES } from "@/app/_constants/routes";
 
 type SignInFormProps = FormHTMLAttributes<HTMLFormElement> & {
     dict: Dictionary;
@@ -37,9 +37,6 @@ export default function SignInForm({ dict, ...props }: SignInFormProps) {
             onSubmit={handleSubmit}
             {...props}
         >
-            <button type="button" onClick={() => signOut(auth)}>
-                Click me!
-            </button>
             <Input
                 label={dict.email}
                 type="email"
@@ -59,6 +56,16 @@ export default function SignInForm({ dict, ...props }: SignInFormProps) {
                 {isLoading ? <LoadingSpinner /> : dict.sign_in}
             </Button>
             {errors?.unknown && <ErrorP>{dict[errors.unknown]}</ErrorP>}
+
+            <p className="text-center text-base font-medium text-slate-700">
+                {dict.do_you_not_have_an_account}{" "}
+                <Link
+                    href={ROUTES.SIGN_UP}
+                    className="underline underline-offset-4 decoration-emerald-500"
+                >
+                    {dict.sign_up}
+                </Link>
+            </p>
         </form>
     );
 }

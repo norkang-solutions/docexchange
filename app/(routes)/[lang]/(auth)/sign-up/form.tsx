@@ -10,6 +10,7 @@ import { useAuth } from "@/app/_contexts/auth-context";
 import CheckmarkCheckbox from "@/app/_components/checkbox";
 import Link from "next/link";
 import { Dictionary } from "@/app/_dictionaries/type";
+import { ROUTES } from "@/app/_constants/routes";
 
 type SignUpFormProps = FormHTMLAttributes<HTMLFormElement> & {
     dict: Dictionary;
@@ -72,19 +73,19 @@ export default function SignUpForm({ dict, ...props }: SignUpFormProps) {
                 id={`terms-and-conditions-${id}`}
                 name="termsAndConditions"
             >
-                I agree to the{" "}
+                {dict.i_agree_to_the}{" "}
                 <Link
-                    href="/terms"
+                    href={ROUTES.TERMS_AND_CONDITIONS}
                     className="underline underline-offset-4 decoration-emerald-500"
                 >
-                    terms and conditions
+                    {dict.terms_and_conditions}
                 </Link>{" "}
-                and{" "}
+                {dict.and}{" "}
                 <Link
-                    href="/privacy"
+                    href={ROUTES.PRIVACY_POLICY}
                     className="underline underline-offset-4 decoration-emerald-500"
                 >
-                    privacy policy
+                    {dict.privacy_policy}
                 </Link>
             </CheckmarkCheckbox>
 
@@ -92,6 +93,16 @@ export default function SignUpForm({ dict, ...props }: SignUpFormProps) {
                 {isLoading ? <LoadingSpinner /> : "Sign Up"}
             </Button>
             {errors?.unknown && <ErrorP>{dict[errors.unknown]}</ErrorP>}
+
+            <p className="text-center text-base font-medium text-slate-700">
+                {dict.do_you_already_have_an_account}{" "}
+                <Link
+                    href={ROUTES.SIGN_IN}
+                    className="underline underline-offset-4 decoration-emerald-500"
+                >
+                    {dict.sign_in}
+                </Link>
+            </p>
         </form>
     );
 }
