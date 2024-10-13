@@ -7,6 +7,7 @@ import {
     SignInFormErrors,
 } from "../_entities/models/auth/sign-in-form";
 import useWait from "./use-wait";
+import { Dictionary } from "../_dictionaries/type";
 
 type SignInReturn = {
     signIn: (formData: FormData) => Promise<void>;
@@ -32,7 +33,10 @@ export default function useSignIn(): SignInReturn {
 
         if (error) {
             const fieldErrors = Object.fromEntries(
-                error.errors.map(({ path, message }) => [path[0], message])
+                error.errors.map(({ path, message }) => [
+                    path[0],
+                    message as keyof Dictionary,
+                ])
             );
             setErrors(fieldErrors);
             setIsLoading(false);
@@ -51,22 +55,23 @@ export default function useSignIn(): SignInReturn {
                     code === "auth/wrong-password"
                 ) {
                     setErrors({
-                        email: "Invalid email or password",
-                        password: "Invalid email or password",
+                        email: "invalid_email_or_password",
+                        password: "invalid_email_or_password",
                     });
                 } else if (code === "auth/user-not-found") {
                     setErrors({
-                        email: "A user with this email does not exist",
+                        email: "user_not_found",
                     });
                 } else {
                     setErrors({
                         unknown:
-                            "Our auth provider is experiencing issues, please contact support",
+                            "unknown_error_while_signing_in_please_contact_support",
                     });
                 }
             } else {
                 setErrors({
-                    unknown: "Something went wrong, please contact support",
+                    unknown:
+                        "unknown_error_while_signing_in_please_contact_support",
                 });
             }
         } finally {

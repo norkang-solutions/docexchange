@@ -9,10 +9,13 @@ import LoadingSpinner from "@/app/_components/loading-spinner";
 import { useAuth } from "@/app/_contexts/auth-context";
 import CheckmarkCheckbox from "@/app/_components/checkbox";
 import Link from "next/link";
+import { Dictionary } from "@/app/_dictionaries/type";
 
-type SignUpFormProps = FormHTMLAttributes<HTMLFormElement>;
+type SignUpFormProps = FormHTMLAttributes<HTMLFormElement> & {
+    dict: Dictionary;
+};
 
-export default function SignUpForm({ ...props }: SignUpFormProps) {
+export default function SignUpForm({ dict, ...props }: SignUpFormProps) {
     const id = useId();
 
     const { user, loading: isLoadingUser } = useAuth();
@@ -38,31 +41,34 @@ export default function SignUpForm({ ...props }: SignUpFormProps) {
                 type="email"
                 id={`email-${id}`}
                 name="email"
-                error={errors?.email}
+                error={errors?.email && dict[errors.email]}
             />
             <Input
                 label="Username"
                 type="text"
                 id={`username-${id}`}
                 name="username"
-                error={errors?.username}
+                error={errors?.username && dict[errors.username]}
             />
             <Input
                 label="Password"
                 type="password"
                 id={`password-${id}`}
                 name="password"
-                error={errors?.password}
+                error={errors?.password && dict[errors.password]}
             />
             <Input
                 label="Confirm Password"
                 type="password"
                 id={`confirm-password-${id}`}
                 name="confirmPassword"
-                error={errors?.confirmPassword}
+                error={errors?.confirmPassword && dict[errors.confirmPassword]}
             />
             <CheckmarkCheckbox
-                error={errors?.termsAndConditions}
+                error={
+                    errors?.termsAndConditions &&
+                    dict[errors.termsAndConditions]
+                }
                 id={`terms-and-conditions-${id}`}
                 name="termsAndConditions"
             >
@@ -85,7 +91,7 @@ export default function SignUpForm({ ...props }: SignUpFormProps) {
             <Button type="submit" disabled={isLoading || !!user}>
                 {isLoading ? <LoadingSpinner /> : "Sign Up"}
             </Button>
-            {errors?.unknown && <ErrorP>{errors.unknown}</ErrorP>}
+            {errors?.unknown && <ErrorP>{dict[errors.unknown]}</ErrorP>}
         </form>
     );
 }

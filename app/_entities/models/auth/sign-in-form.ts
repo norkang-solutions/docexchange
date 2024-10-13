@@ -1,15 +1,27 @@
+import { Dictionary } from "@/app/_dictionaries/type";
+import dictionaryMsg from "@/app/_utils/dictionary-msg";
 import { z } from "zod";
 
 export const signInSchema = z.object({
-    email: z.string().email({ message: "Invalid email address" }),
+    email: z
+        .string()
+        .email({ message: dictionaryMsg("invalid_email_address") }),
     password: z
         .string()
-        .min(8, { message: "Password must be at least 8 characters" })
-        .max(100, { message: "Password must be at most 100 characters" }),
+        .min(8, {
+            message: dictionaryMsg("password_must_be_at_least_8_characters"),
+        })
+        .max(100, {
+            message: dictionaryMsg("password_must_be_at_most_100_characters"),
+        }),
 });
 
 export type SignInFormData = z.infer<typeof signInSchema>;
 
 export type SignInFormErrors = Partial<
-    Record<keyof SignInFormData | "unknown", string>
+    {
+        [K in keyof SignInFormData]: keyof Dictionary;
+    } & {
+        unknown?: keyof Dictionary;
+    }
 >;

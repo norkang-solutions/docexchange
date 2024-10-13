@@ -7,6 +7,7 @@ import {
 import UsernameAlreadyTakenError from "../_entities/errors/username-already-taken-error";
 import createUser from "../../firebase/firestore/create-user";
 import useWait from "./use-wait";
+import { Dictionary } from "../_dictionaries/type";
 
 type SignUpReturn = {
     signUp: (formData: FormData) => Promise<void>;
@@ -32,7 +33,10 @@ export default function useSignUp(): SignUpReturn {
 
         if (error) {
             const fieldErrors = Object.fromEntries(
-                error.errors.map(({ path, message }) => [path[0], message])
+                error.errors.map(({ path, message }) => [
+                    path[0],
+                    message as keyof Dictionary,
+                ])
             );
             setErrors(fieldErrors);
             setIsLoading(false);
@@ -49,22 +53,23 @@ export default function useSignUp(): SignUpReturn {
             });
         } catch (err) {
             if (err instanceof UsernameAlreadyTakenError) {
-                setErrors({ username: "Username already taken" });
+                setErrors({ username: "username_already_taken" });
                 return;
             }
             if (err instanceof FirebaseError) {
                 if (err.code === "auth/email-already-in-use") {
-                    setErrors({ email: "Email already in use" });
+                    setErrors({ email: "email_already_in_use" });
                     return;
                 }
                 setErrors({
                     unknown:
-                        "Our auth provider is experiencing issues, please contact support",
+                        "unknown_error_while_signing_up_please_contact_support",
                 });
                 return;
             }
             setErrors({
-                unknown: "Something went wrong, please contact support",
+                unknown:
+                    "unknown_error_while_signing_up_please_contact_support",
             });
         } finally {
             setIsLoading(false);

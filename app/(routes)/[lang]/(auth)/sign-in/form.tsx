@@ -7,11 +7,17 @@ import useSignIn from "@/app/_hooks/use-sign-in";
 import ErrorP from "@/app/_components/error-p";
 import LoadingSpinner from "@/app/_components/loading-spinner";
 import { useAuth } from "@/app/_contexts/auth-context";
+import { Dictionary } from "@/app/_dictionaries/type";
+import { signOut } from "firebase/auth";
+import { auth } from "@/firebase/client";
 
-type SignInFormProps = FormHTMLAttributes<HTMLFormElement>;
+type SignInFormProps = FormHTMLAttributes<HTMLFormElement> & {
+    dict: Dictionary;
+};
 
-export default function SignInForm({ ...props }: SignInFormProps) {
+export default function SignInForm({ dict, ...props }: SignInFormProps) {
     const id = useId();
+
     const { user, loading: isLoadingUser } = useAuth();
 
     const { signIn, isLoading, errors } = useSignIn();
@@ -31,25 +37,28 @@ export default function SignInForm({ ...props }: SignInFormProps) {
             onSubmit={handleSubmit}
             {...props}
         >
+            <button type="button" onClick={() => signOut(auth)}>
+                Click me!
+            </button>
             <Input
-                label="Email"
+                label={dict.email}
                 type="email"
                 id={`email-${id}`}
                 name="email"
-                error={errors?.email}
+                error={errors && errors.email && dict[errors.email]}
             />
             <Input
-                label="Password"
+                label={dict.password}
                 type="password"
                 id={`password-${id}`}
                 name="password"
-                error={errors?.password}
+                error={errors?.password && dict[errors.password]}
             />
 
             <Button type="submit" disabled={isLoading || !!user}>
-                {isLoading ? <LoadingSpinner /> : "Sign In"}
+                {isLoading ? <LoadingSpinner /> : dict.sign_in}
             </Button>
-            {errors?.unknown && <ErrorP>{errors.unknown}</ErrorP>}
+            {errors?.unknown && <ErrorP>{dict[errors.unknown]}</ErrorP>}
         </form>
     );
 }
