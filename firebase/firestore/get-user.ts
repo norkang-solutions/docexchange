@@ -1,6 +1,6 @@
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../client";
-import { userSchema } from "@/app/_entities/models/user";
+import { userSchema } from "../../app/_entities/models/user";
 
 export default async function getUser(uid: string) {
     const userDoc = await getDoc(doc(db, "users", uid));
