@@ -1,4 +1,4 @@
-import { LayoutProps } from "@/.next/types/app/(routes)/[lang]/layout";
+import { LayoutProps } from "@/app/_utils/types";
 import SideMenuLayout from "@/app/_components/layouts/side-menu-layout";
 import { ROUTES } from "@/app/_constants/routes";
 import { getDictionary } from "@/app/dictionaries";

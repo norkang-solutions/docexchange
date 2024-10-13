@@ -10,7 +10,7 @@ type Card = {
 type AboutTemplateProps = {
     title: string;
     cards?: Card[];
-    children: ReactNode;
+    children?: ReactNode;
 };
 
 export default function AboutTemplate({
@@ -21,7 +21,7 @@ export default function AboutTemplate({
     return (
         <div className="flex flex-col gap-4 px-4 w-full max-w-3xl mx-auto">
             <h1 className="text-2xl md:text-4xl font-semibold  ">{title}</h1>
-            <div className="text-md">{children}</div>
+            <div className="text-md space-y-2">{children}</div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {cards.map(card => (
                     <TextDescriptionCard

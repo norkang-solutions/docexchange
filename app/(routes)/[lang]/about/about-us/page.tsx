@@ -10,19 +10,19 @@ export default function About({ params: { lang } }: LangParams) {
         <AboutTemplate
             cards={[
                 {
-                    title: "Lorem ipsum dolor",
-                    description: "Lorem ipsum dolor",
+                    title: dict.team,
+                    description: dict.get_to_know_our_team,
                     link: ROUTES.ABOUT_TEAM,
                 },
             ]}
             title={dict.about_us}
         >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident,
-            voluptate aspernatur officia, nobis quia praesentium qui corporis
-            repudiandae autem enim ex et quos sint, voluptatum perspiciatis quo
-            quaerat veritatis aliquid fugit. Corrupti illum, facere,
-            consequuntur aliquid modi quidem consectetur quae, rem doloribus
-            temporibus consequatur voluptates eaque optio dolor deserunt cumque.
+            <p>{dict.docexchange_is_a_student_powered_study_platform}</p>
+            <p>
+                {
+                    dict.at_docexchange_we_believe_in_the_power_of_collaborative_learning
+                }
+            </p>
         </AboutTemplate>
     );
 }
