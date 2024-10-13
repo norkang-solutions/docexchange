@@ -62,6 +62,7 @@ export default function SignUpForm({ ...props }: SignUpFormProps) {
                 error={errors?.confirmPassword}
             />
             <CheckmarkCheckbox
+                error={errors?.termsAndConditions}
                 id={`terms-and-conditions-${id}`}
                 name="termsAndConditions"
             >

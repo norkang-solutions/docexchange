@@ -19,6 +19,9 @@ export const signUpSchema = z
             .string()
             .min(8, { message: "Password must be at least 8 characters" })
             .max(100, { message: "Password must be at most 100 characters" }),
+        termsAndConditions: z.string({
+            message: "You must agree to the terms and conditions",
+        }),
     })
     .refine(data => data.password === data.confirmPassword, {
         message: "Passwords do not match",
