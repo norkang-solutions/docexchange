@@ -1,8 +1,7 @@
 "use client";
 
 import { auth } from "@/firebase/client";
-import { signOut } from "firebase/auth";
-import getUser from "@/firebase/firestore/get-user";
+import { signOut, User } from "firebase/auth";
 import {
     createContext,
     ReactNode,
@@ -11,7 +10,6 @@ import {
     useMemo,
     useState,
 } from "react";
-import { User } from "../_entities/models/user";
 
 type AuthContextType = {
     user: User | null;
@@ -40,7 +38,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(async currentUser => {
             if (currentUser) {
-                setUser(await getUser(currentUser.uid));
+                setUser(currentUser);
             } else {
                 setUser(null);
             }
