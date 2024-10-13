@@ -39,8 +39,13 @@ export default function SideMenuLayout({
 
     return (
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4 py-0 md:py-8 w-full max-w-7xl mx-auto">
-            <div className="col-span-1 md:col-span-3 flex flex-col gap-2 md:gap-4 px-4 w-full border-b border-gray-200 dark:border-gray-700 md:border-b-0">
-                {sideMenu}
+            <div className="col-span-1 md:col-span-3 flex flex-col gap-2 md:gap-4 px-4 w-full border-b border-gray-200 md:border-b-0">
+                <div className="md:hidden p-4">
+                    <DropdownMenu title="Menu" path={currentPath}>
+                        {sideMenu}
+                    </DropdownMenu>
+                </div>
+                <div className="hidden md:block">{sideMenu}</div>
             </div>
             <div className="col-span-1 md:col-span-9">{children}</div>
         </div>
