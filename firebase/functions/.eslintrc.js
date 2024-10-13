@@ -26,7 +26,7 @@ module.exports = {
         quotes: ["error", "double"],
         "import/no-unresolved": 0,
         "import/extensions": "off",
-        indent: ["error", 2],
+        indent: ["error", 4],
         "no-console": "error",
         "import/prefer-default-export": "off",
     },
