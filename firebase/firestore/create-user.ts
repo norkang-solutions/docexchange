@@ -1,15 +1,8 @@
 import { createUserWithEmailAndPassword, deleteUser } from "firebase/auth";
-import { auth, db } from "../client";
-import {
-    collection,
-    doc,
-    getDocs,
-    query,
-    serverTimestamp,
-    setDoc,
-    where,
-} from "firebase/firestore";
+import { auth, functions } from "../client";
 import UsernameAlreadyTakenError from "../../app/_entities/errors/username-already-taken-error";
+import { httpsCallable } from "firebase/functions";
+import { FirebaseError } from "firebase/app";
 
 export default async function createUser({
     email,
@@ -20,34 +13,24 @@ export default async function createUser({
     password: string;
     username: string;
 }) {
-    const usernameExists = await checkIfUsernameExist(username);
-
-    if (usernameExists) {
-        throw new UsernameAlreadyTakenError();
-    }
-
     const { user } = await createUserWithEmailAndPassword(
         auth,
         email,
         password
     );
-    const uid = user.uid;
+
+    const createUserOnServer = httpsCallable(functions, "createUser");
 
     try {
-        await setDoc(doc(db, "users", uid), {
-            username,
-            createdAt: serverTimestamp(),
-            createdBy: uid,
-        });
+        await createUserOnServer({ username });
     } catch (error) {
+        if (error instanceof FirebaseError) {
+            if (error.code === "functions/already-exists") {
+                await deleteUser(user);
+                throw new UsernameAlreadyTakenError();
+            }
+        }
         await deleteUser(user);
         throw error;
     }
 }
-
-const checkIfUsernameExist = async (username: string) => {
-    const userRef = collection(db, "users");
-    const q = query(userRef, where("username", "==", username));
-    const querySnapshot = await getDocs(q);
-    return querySnapshot.docs.length > 0;
-};
