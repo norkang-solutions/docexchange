@@ -35,12 +35,5 @@ export const createUser = onCall(
             createdBy: auth.uid,
             createdAt: Timestamp.now(),
         });
-
-        return {
-            id: auth.uid,
-            username,
-            createBy: auth.uid,
-            createdAt: Timestamp.now(),
-        };
     }
 );
