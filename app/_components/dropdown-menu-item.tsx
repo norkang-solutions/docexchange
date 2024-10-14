@@ -13,7 +13,7 @@ export default function DropdownMenuItem({
 }: DropdownMenuItemProps) {
     return (
         <Link
-            className={`flex flex-row px-4 hover:text-gray-500 border-l-2 ${active ? "border-emerald-500" : "border-gray-700"}`}
+            className={`flex flex-row px-4 hover:text-gray-500 border-l-2 ${active ? "border-emerald-500" : "border-slate-700"}`}
             href={path}
         >
             {title}
