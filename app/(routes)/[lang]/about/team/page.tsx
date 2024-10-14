@@ -1,6 +1,6 @@
 import { LangParams } from "@/app/_utils/types";
 import { getDictionary } from "@/app/dictionaries";
-import AboutTemplate from "../../about-template";
+import AboutTemplate from "../about-template";
 import TeamMemberCard from "./team-member-card";
 
 export default function AboutTeam({ params: { lang } }: LangParams) {

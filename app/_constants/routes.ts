@@ -5,9 +5,8 @@ export enum ROUTES {
     PRIVACY_POLICY = "/privacy-policy",
     TERMS_AND_CONDITIONS = "/terms-and-conditions",
     DASHBOARD = "/dashboard",
-    ABOUT = "/about",
-    ABOUT_US = `${ABOUT}/about-us`,
-    ABOUT_TEAM = `${ABOUT_US}/team`,
+    ABOUT = `/about`,
+    ABOUT_TEAM = `${ABOUT}/team`,
     ABOUT_REWARDS = `${ABOUT}/rewards`,
     ABOUT_REWARDS_HOW_TO_GET_PAID = `${ABOUT_REWARDS}/how-to-get-paid`,
 }
