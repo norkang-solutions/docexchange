@@ -41,9 +41,17 @@ export type Dictionary = {
     about_us: string;
     docexchange_is_a_student_powered_study_platform: string;
     at_docexchange_we_believe_in_the_power_of_collaborative_learning: string;
+    by_the_same_token_docexchange_is_an_open_source_platform: string;
+    source_code: string;
+    check_out_our_source_code_on_github: string;
     team: string;
     get_to_know_our_team: string;
     are_you_interested_in_joining_our_team: string;
     student_rewards_program: string;
+    we_pay_out_100p_of_our_revenue_to_uploaders: string;
     how_to_get_paid: string;
+    learn_how_you_can_start_receiving_rewards: string;
+    we_use_stripe_to_pay_our_users: string;
+    dashboard: string;
+    note_that_you_have_to_connect_your_stripe_account: string;
 };

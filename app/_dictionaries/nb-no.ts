@@ -49,9 +49,22 @@ export const nbNO: Dictionary = {
         "DocExchange er en studentdrevet studieplattform. Vi har som mål å gi studenter en plattform der de kan dele arbeidet sitt og bli belønnet samtidig som de får tilgang til alle de beste studieressursene fra sine medstudenter.",
     at_docexchange_we_believe_in_the_power_of_collaborative_learning:
         "Hos DocExchange tror vi på kraften av samarbeidslæring. Vår misjon er å transformere den tradisjonelle læringsprosessen ved å fremme et miljø der studenter kan samarbeide, dele innsikt og få tilgang til varierte perspektiver på emner de studerer. Ved å tjene penger på delte ressurser oppfordrer vi studenter til å produsere kvalitetsinnhold.",
+    by_the_same_token_docexchange_is_an_open_source_platform:
+        "Fordi vi tror på deling og åpenhet, er DocExchange en open-source plattform. Dette vil si at alle kan se, laste ned, modifisere og dele koden som ble brukt til å bygge DocExchange, noe som gjør det ikke bare lettere for brukerne våre å stole på sikkerheten og personvernet til plattformen vår, men det gir også brukerne våre en unik mulighet til å delta aktivt i videre utvikling av plattformen.",
     get_to_know_our_team: "Bli kjent med teamet vårt",
+    source_code: "Kildekode",
+    check_out_our_source_code_on_github: "Sjekk ut koden vår på GitHub",
     are_you_interested_in_joining_our_team:
         "Er du interessert i å bli med i teamet vårt? I så fall, kontakt en av oss!",
     student_rewards_program: "Belønningsprogram for studenter",
+    we_pay_out_100p_of_our_revenue_to_uploaders:
+        "Vi utbetaler 100% av inntektene våre til opplastere. Det vil si at alt brukerne våre betaler i medlemskapsavgifter går tilbake til brukerne. Fordelingen er basert på hvor populære dokumentene er, og de med flest visninger, nedlastninger og likes blir belønnet mest.",
     how_to_get_paid: "Hvordan få betalt",
+    learn_how_you_can_start_receiving_rewards:
+        "Lær hvordan du kan motta belønninger",
+    we_use_stripe_to_pay_our_users:
+        "Vi bruker Stripe til å betale brukerne våre. Du kan koble Stripe-kontoen din og få betalt direkte til bankkontoen din. Du kan gjøre dette på ditt ",
+    dashboard: "dashboard",
+    note_that_you_have_to_connect_your_stripe_account:
+        "Merk at du må koble til Stripe-kontoen din før du kan få betalt. Du vil ikke bli betalt for bruken av opplastingene dine før du kobler Stripe-kontoen. Deretter vil du bli betalt ved neste betalingsperiode.",
 };
