@@ -15,7 +15,8 @@ export default function DropdownMenu({
     children,
 }: DropdownMenuProps) {
     const currentPath = usePathname();
-    const [open, setOpen] = useState(path && currentPath.includes(path));
+    const active = path && currentPath.includes(path);
+    const [open, setOpen] = useState(active);
 
     return (
         <div className="flex flex-col">
@@ -24,7 +25,11 @@ export default function DropdownMenu({
                 href={path ?? ""}
                 onClick={() => setOpen(!open)}
             >
-                <p className="hover:text-gray-500">{title}</p>
+                <p
+                    className={`hover:text-gray-500 ${active ? "font-bold" : "font-normal"}`}
+                >
+                    {title}
+                </p>
                 <ArrowDownIcon
                     className={`ml-auto rotate-[270deg] transition-transform duration-300 w-4 h-4 ${
                         open ? "transform rotate-[360deg]" : ""
