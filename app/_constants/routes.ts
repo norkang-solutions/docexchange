@@ -6,5 +6,5 @@ export enum ROUTES {
     TERMS_AND_CONDITIONS = "/terms-and-conditions",
     DASHBOARD = "/dashboard",
     EXPLORE = "/explore",
-    UPLOAD = "/upload",
+    CONTRIBUTE = "/contribute",
 }

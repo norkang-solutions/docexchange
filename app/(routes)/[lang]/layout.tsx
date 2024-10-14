@@ -4,6 +4,8 @@ import localFont from "next/font/local";
 import "../../globals.css";
 import NavBar from "@/app/_components/nav-bar";
 import { AuthProvider } from "@/app/_contexts/auth-context";
+import { getDictionary } from "@/app/dictionaries";
+import { LangParams } from "@/app/_utils/types";
 
 const geistSans = localFont({
     src: "../../fonts/GeistVF.woff",
@@ -17,17 +19,17 @@ const geistMono = localFont({
 });
 
 export default function RootLayout({
+    params: { lang },
     children,
-}: Readonly<{
-    children: React.ReactNode;
-}>) {
+}: LangParams & { children: React.ReactNode }) {
+    const dict = getDictionary(lang);
     return (
-        <html lang="en">
+        <html lang={lang}>
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
                 <AuthProvider>
-                    <NavBar />
+                    <NavBar dict={dict} />
                     {children}
                 </AuthProvider>
             </body>

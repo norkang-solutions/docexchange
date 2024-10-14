@@ -1,12 +1,15 @@
 import { twJoin } from "tailwind-merge";
 import { ButtonHTMLAttributes } from "react";
+import Link from "next/link";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     variant?: "primary" | "secondary";
     children: React.ReactNode;
+    href?: string;
 };
 
 export default function Button({
+    href,
     children,
     variant = "primary",
     ...props
@@ -18,6 +21,19 @@ export default function Button({
         variant === "primary"
             ? "text-white bg-emerald-500 hover:bg-emerald-600"
             : "text-emerald-800 bg-emerald-100 hover:bg-emerald-200";
+
+    if (href) {
+        return (
+            <Link
+                id={props.id}
+                type={props.type}
+                href={href}
+                className={twJoin(baseClasses, variantClasses)}
+            >
+                {children}
+            </Link>
+        );
+    }
 
     return (
         <button
