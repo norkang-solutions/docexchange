@@ -44,4 +44,6 @@ export type Dictionary = {
     team: string;
     get_to_know_our_team: string;
     are_you_interested_in_joining_our_team: string;
+    student_rewards_program: string;
+    how_to_get_paid: string;
 };

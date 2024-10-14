@@ -55,4 +55,6 @@ export const enUS: Dictionary = {
     get_to_know_our_team: "Get to know our team",
     are_you_interested_in_joining_our_team:
         "Are you interested in joining our team? Then contact one of us.",
+    student_rewards_program: "Student rewards program",
+    how_to_get_paid: "How to get paid",
 };

@@ -43,7 +43,7 @@ export default function SideMenuLayout({
                 <div className="md:hidden p-4">
                     <DropdownMenu title="Menu">{sideMenu}</DropdownMenu>
                 </div>
-                <div className="hidden md:block">{sideMenu}</div>
+                <div className="hidden md:flex flex-col gap-2">{sideMenu}</div>
             </div>
             <div className="col-span-1 md:col-span-9">{children}</div>
         </div>

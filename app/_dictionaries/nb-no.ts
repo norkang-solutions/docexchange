@@ -52,4 +52,6 @@ export const nbNO: Dictionary = {
     get_to_know_our_team: "Bli kjent med teamet vårt",
     are_you_interested_in_joining_our_team:
         "Er du interessert i å bli med i teamet vårt? I så fall, kontakt en av oss!",
+    student_rewards_program: "Belønningsprogram for studenter",
+    how_to_get_paid: "Hvordan få betalt",
 };
