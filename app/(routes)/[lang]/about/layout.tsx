@@ -19,6 +19,16 @@ export default function AboutLayout({
                 },
             ],
         },
+        {
+            title: dict.student_rewards_program,
+            path: ROUTES.ABOUT_REWARDS,
+            items: [
+                {
+                    title: dict.how_to_get_paid,
+                    path: ROUTES.ABOUT_REWARDS_HOW_TO_GET_PAID,
+                },
+            ],
+        },
     ];
 
     return <SideMenuLayout items={pages}>{children}</SideMenuLayout>;

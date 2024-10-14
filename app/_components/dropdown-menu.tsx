@@ -31,7 +31,7 @@ export default function DropdownMenu({
                     }`}
                 />
             </Link>
-            {open && <div className="p-4">{children}</div>}
+            {open && <div className="p-4 flex flex-col gap-4">{children}</div>}
         </div>
     );
 }
