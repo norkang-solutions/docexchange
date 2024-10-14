@@ -11,7 +11,7 @@ export default function AboutLayout({
     const pages = [
         {
             title: dict.about_us,
-            path: ROUTES.ABOUT,
+            path: ROUTES.ABOUT_US,
             items: [
                 {
                     title: dict.team,
