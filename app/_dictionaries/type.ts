@@ -15,6 +15,11 @@ export type Dictionary = {
     do_you_already_have_an_account: string;
     do_you_not_have_an_account: string;
 
+    // nav
+    contribute: string;
+    explore: string;
+    dashboard: string;
+
     // zod
     invalid_email_address: string;
     password_must_be_at_least_8_characters: string;
