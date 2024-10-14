@@ -15,7 +15,7 @@ export default function TextDescriptionCard({
             href={link}
             className="gap-2 text-md font-medium border border-gray-200 rounded-md p-4 col-span-2 md:col-span-1 hover:bg-gray-100"
         >
-            <h4 className="text-emerald-500">{title}</h4>
+            <h4 className="font-semibold">{title}</h4>
             <p className="text-sm font-normal">{description}</p>
         </Link>
     );

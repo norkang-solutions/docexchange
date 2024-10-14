@@ -25,7 +25,7 @@ export default function TeamMemberCard({
                 src={image}
                 alt={name}
             />
-            <h3 className="text-xl">{name}</h3>
+            <h3 className="text-xl font-bold">{name}</h3>
             <a
                 href={`mailto:${email}`}
                 className="text-sm text-gray-700 hover:underline"
