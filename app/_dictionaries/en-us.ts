@@ -58,7 +58,7 @@ export const enUS: Dictionary = {
     source_code: "Source code",
     check_out_our_source_code_on_github: "Check out our source code on GitHub",
     are_you_interested_in_joining_our_team:
-        "Are you interested in joining our team? Then contact one of us.",
+        "Are you interested in joining our team? Then contact one of us!",
     student_rewards_program: "Student rewards program",
     we_pay_out_100p_of_our_revenue_to_uploaders:
         "We pay out 100% of our revenue to uploaders. This means that all the money our users spend on subscription fees goes back to the users. The distribution is based on the popularity of documents, and the most viewed, downloaded and liked documents will be rewarded the most.",

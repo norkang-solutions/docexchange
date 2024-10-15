@@ -55,7 +55,7 @@ export const nbNO: Dictionary = {
     source_code: "Kildekode",
     check_out_our_source_code_on_github: "Sjekk ut koden vår på GitHub",
     are_you_interested_in_joining_our_team:
-        "Er du interessert i å bli med i teamet vårt? I så fall, kontakt en av oss!",
+        "Er du interessert i å bli med i teamet vårt? I så fall, ta kontakt med en av oss!",
     student_rewards_program: "Belønningsprogram for studenter",
     we_pay_out_100p_of_our_revenue_to_uploaders:
         "Vi utbetaler 100% av inntektene våre til opplastere. Det vil si at alt brukerne våre betaler i medlemskapsavgifter går tilbake til brukerne. Fordelingen er basert på hvor populære dokumentene er, og de med flest visninger, nedlastninger og likes blir belønnet mest.",
