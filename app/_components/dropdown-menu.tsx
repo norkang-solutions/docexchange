@@ -26,7 +26,7 @@ export default function DropdownMenu({
                 onClick={() => setOpen(!open)}
             >
                 <p
-                    className={`hover:text-gray-500 ${active ? "font-bold" : "font-normal"}`}
+                    className={`hover:text-gray-500 ${active ? "font-semibold" : "font-normal"}`}
                 >
                     {title}
                 </p>
