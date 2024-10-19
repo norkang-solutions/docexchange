@@ -16,7 +16,7 @@ export type Dictionary = {
     do_you_not_have_an_account: string;
 
     // nav
-    contribute: string;
+    contribute_documents: string;
     explore: string;
     dashboard: string;
 

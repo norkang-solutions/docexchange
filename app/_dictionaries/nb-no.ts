@@ -17,7 +17,7 @@ export const nbNO: Dictionary = {
     do_you_not_have_an_account: "Har du ikke en konto?",
 
     // nav
-    contribute: "Bidra",
+    contribute_documents: "Bidra med dokumenter",
     explore: "Utforsk",
     dashboard: "Dashbord",
 

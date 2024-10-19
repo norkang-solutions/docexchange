@@ -17,7 +17,7 @@ export const enUS: Dictionary = {
     do_you_not_have_an_account: "Do you not have an account?",
 
     // nav
-    contribute: "Contribute",
+    contribute_documents: "Contribute documents",
     explore: "Explore",
     dashboard: "Dashboard",
 
