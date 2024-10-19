@@ -16,6 +16,11 @@ export const nbNO: Dictionary = {
     do_you_already_have_an_account: "Har du allerede en konto?",
     do_you_not_have_an_account: "Har du ikke en konto?",
 
+    // nav
+    contribute_documents: "Bidra med dokumenter",
+    explore: "Utforsk",
+    dashboard: "Dashbord",
+
     // zod
     invalid_email_address: "Ugyldig e-postadresse",
     password_must_be_at_least_8_characters: "Passordet må være minst 8 tegn",

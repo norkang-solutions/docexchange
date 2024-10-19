@@ -16,6 +16,11 @@ export const enUS: Dictionary = {
     do_you_already_have_an_account: "Do you already have an account?",
     do_you_not_have_an_account: "Do you not have an account?",
 
+    // nav
+    contribute_documents: "Contribute documents",
+    explore: "Explore",
+    dashboard: "Dashboard",
+
     // zod
     invalid_email_address: "Invalid email address",
     password_must_be_at_least_8_characters:

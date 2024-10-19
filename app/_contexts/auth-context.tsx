@@ -1,7 +1,7 @@
 "use client";
 
 import { auth } from "@/firebase/client";
-import { signOut, User } from "firebase/auth";
+import { User } from "firebase/auth";
 import {
     createContext,
     ReactNode,
@@ -14,13 +14,11 @@ import {
 type AuthContextType = {
     user: User | null;
     loading: boolean;
-    signOut: () => void;
 };
 
 const AuthContext = createContext<AuthContextType>({
     user: null,
     loading: true,
-    signOut: () => {},
 });
 
 export function useAuth() {
@@ -36,7 +34,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged(async currentUser => {
+        const unsubscribe = auth.onAuthStateChanged(currentUser => {
             if (currentUser) {
                 setUser(currentUser);
             } else {
@@ -47,10 +45,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         return unsubscribe;
     }, []);
 
-    const value = useMemo(
-        () => ({ user, loading, signOut: () => signOut(auth) }),
-        [user, loading]
-    );
+    const value = useMemo(() => ({ user, loading }), [user, loading]);
 
     return (
         <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
