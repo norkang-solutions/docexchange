@@ -30,6 +30,6 @@ export function middleware(request: NextRequest): void | Response {
 export const config = {
     matcher: [
         // Skip all internal paths (_next), sitemap.xml, robots.txt, favicon.ico and Azure static web apps (.swa)
-        "/((?!_next|sitemap*|server-sitemap*|robots.txt|favicon.ico|.swa).*)",
+        "/((?!_next|sitemap*|server-sitemap*|robots.txt|favicon.ico|icon.png*|apple-icon.png*|.swa).*)",
     ],
 };
