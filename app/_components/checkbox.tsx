@@ -1,5 +1,7 @@
 import { InputHTMLAttributes, ReactNode } from "react";
+import { twJoin } from "tailwind-merge";
 import ErrorP from "./error-p";
+import CheckIcon from "./icons/check-icon";
 
 type CheckboxProps = InputHTMLAttributes<HTMLInputElement> & {
     error?: string;
@@ -11,23 +13,21 @@ export default function Checkbox({ error, children, ...props }: CheckboxProps) {
         <div className="w-full flex flex-col gap-2">
             <div className="flex items-center flex gap-2">
                 <input
-                    className="peer relative appearance-none shrink-0 w-5 h-5 mt-1 checked:bg-emerald-500 border border-slate-300 rounded-md checked:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-slate-900 focus:border-slate-900"
+                    className={twJoin(
+                        "peer relative appearance-none shrink-0 w-5 h-5 mt-1 border border-slate-300 rounded-md",
+                        "checked:bg-emerald-500  checked:border-emerald-500",
+                        "focus:outline-none focus:ring-1 focus:ring-slate-900 focus:border-slate-900"
+                    )}
                     type="checkbox"
                     {...props}
                 />
-                <svg
-                    className="absolute p-1 w-5 h-5 pointer-events-none stroke-white fill-none peer-checked:!fill-emerald-500 mt-1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                >
-                    <path d="M20 6L9 17l-5-5" />
-                </svg>
+                <CheckIcon
+                    viewBox="0 0 16 16"
+                    className={twJoin(
+                        "absolute pointer-events-none fill-white w-5 h-5 mt-1",
+                        "peer-checked:fill-white"
+                    )}
+                />
                 <label
                     className="text-base font-medium text-slate-700"
                     htmlFor={props.id}
