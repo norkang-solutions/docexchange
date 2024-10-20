@@ -18,7 +18,6 @@ export type Dictionary = {
     // nav
     contribute_documents: string;
     explore: string;
-    dashboard: string;
 
     // zod
     invalid_email_address: string;
@@ -36,4 +35,26 @@ export type Dictionary = {
     email_already_in_use: string;
     unknown_error_while_signing_up_please_contact_support: string;
     username_already_taken: string;
+
+    // about
+    about_us: string;
+    docexchangeio_is_a_student_powered_study_platform: string;
+    at_docexchangeio_we_believe_in_the_power_of_collaborative_learning: string;
+    by_the_same_token_docexchangeio_is_an_open_source_platform: string;
+    source_code: string;
+    check_out_our_source_code_on_github: string;
+    team: string;
+    get_to_know_our_team: string;
+    are_you_interested_in_joining_our_team: string;
+    student_rewards_program: string;
+    we_pay_out_100p_of_our_revenue_to_uploaders: string;
+    how_to_get_paid: string;
+    learn_how_you_can_start_receiving_rewards: string;
+    we_use_stripe_to_pay_our_users: string;
+    dashboard: string;
+    note_that_you_have_to_connect_your_stripe_account: string;
+    legal: string;
+    on_this_page_you_can_find_information_about_who_we_are: string;
+    this_section_describes_our_legal_policies: string;
+    read_more_about_our_rewards_program: string;
 };
