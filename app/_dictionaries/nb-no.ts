@@ -1,3 +1,4 @@
+import { COMPANY_NAME } from "../_constants/names";
 import { Dictionary } from "./type";
 
 export const nbNO: Dictionary = {
@@ -45,12 +46,9 @@ export const nbNO: Dictionary = {
     // about
     about_us: "Om oss",
     team: "Team",
-    docexchangeio_is_a_student_powered_study_platform:
-        "DocExchange.io er en studentdrevet studieplattform. Vi har som mål å gi studenter en plattform der de kan dele arbeidet sitt og bli belønnet samtidig som de får tilgang til alle de beste studieressursene fra sine medstudenter.",
-    at_docexchangeio_we_believe_in_the_power_of_collaborative_learning:
-        "Hos DocExchange.io tror vi på kraften av samarbeidslæring. Vår misjon er å transformere den tradisjonelle læringsprosessen ved å fremme et miljø der studenter kan samarbeide, dele innsikt og få tilgang til varierte perspektiver på emner de studerer. Ved å tjene penger på delte ressurser oppfordrer vi studenter til å produsere kvalitetsinnhold.",
-    by_the_same_token_docexchangeio_is_an_open_source_platform:
-        "Fordi vi tror på deling og åpenhet, er DocExchange.io en open-source plattform. Dette vil si at alle kan se, laste ned, modifisere og dele koden som ble brukt til å bygge DocExchange.io, noe som gjør det ikke bare lettere for brukerne våre å stole på sikkerheten og personvernet til plattformen vår, men det gir også brukerne våre en unik mulighet til å delta aktivt i videre utvikling av plattformen.",
+    docexchangeio_is_a_student_powered_study_platform: `${COMPANY_NAME} er en studentdrevet studieplattform. Vi har som mål å gi studenter en plattform der de kan dele arbeidet sitt og bli belønnet samtidig som de får tilgang til alle de beste studieressursene fra sine medstudenter.`,
+    at_docexchangeio_we_believe_in_the_power_of_collaborative_learning: `Hos ${COMPANY_NAME} tror vi på kraften av samarbeidslæring. Vår misjon er å transformere den tradisjonelle læringsprosessen ved å fremme et miljø der studenter kan samarbeide, dele innsikt og få tilgang til varierte perspektiver på emner de studerer. Ved å tjene penger på delte ressurser oppfordrer vi studenter til å produsere kvalitetsinnhold.`,
+    by_the_same_token_docexchangeio_is_an_open_source_platform: `Fordi vi tror på deling og åpenhet, er ${COMPANY_NAME} en open-source plattform. Dette vil si at alle kan se, laste ned, modifisere og dele koden som ble brukt til å bygge ${COMPANY_NAME}, noe som gjør det ikke bare lettere for brukerne våre å stole på sikkerheten og personvernet til plattformen vår, men det gir også brukerne våre en unik mulighet til å delta aktivt i videre utvikling av plattformen.`,
     get_to_know_our_team: "Bli kjent med teamet vårt",
     source_code: "Kildekode",
     check_out_our_source_code_on_github: "Sjekk ut koden vår på GitHub",

@@ -1,3 +1,4 @@
+import { COMPANY_NAME } from "../_constants/names";
 import { Dictionary } from "./type";
 
 export const enUS: Dictionary = {
@@ -48,12 +49,10 @@ export const enUS: Dictionary = {
 
     about_us: "About us",
     team: "Team",
-    docexchangeio_is_a_student_powered_study_platform:
-        "DocExchange.io is a student-powered study platform. We aim to provide students with a platform where they can share their work and be rewarded as well as access all the best study materials from their peers.",
-    at_docexchangeio_we_believe_in_the_power_of_collaborative_learning:
-        "At DocExchange.io, we believe in the power of collaborative learning. Our mission is to transform the traditional learning process by fostering an environment where students can collaborate, share insights, and access varied perspectives on topics they study. By monetizing their shared resources, we encourage students to produce quality content.",
-    by_the_same_token_docexchangeio_is_an_open_source_platform:
-        "By the same token, DocExchange.io is an open-source platform. This means that anyone can view, download, modify and share the code used to build DocExchange.io. Not only does this allow our users to trust the security and privacy of our platform, but it also gives our users a unique opportunity to take part in its future development.",
+
+    docexchangeio_is_a_student_powered_study_platform: `${COMPANY_NAME} is a student-powered study platform. We aim to provide students with a platform where they can share their work and be rewarded as well as access all the best study materials from their peers.`,
+    at_docexchangeio_we_believe_in_the_power_of_collaborative_learning: `At ${COMPANY_NAME}, we believe in the power of collaborative learning. Our mission is to transform the traditional learning process by fostering an environment where students can collaborate, share insights, and access varied perspectives on topics they study. By monetizing their shared resources, we encourage students to produce quality content.`,
+    by_the_same_token_docexchangeio_is_an_open_source_platform: `By the same token, ${COMPANY_NAME} is an open-source platform. This means that anyone can view, download, modify and share the code used to build ${COMPANY_NAME}. Not only does this allow our users to trust the security and privacy of our platform, but it also gives our users a unique opportunity to take part in its future development.`,
     get_to_know_our_team: "Get to know our team",
     source_code: "Source code",
     check_out_our_source_code_on_github: "Check out our source code on GitHub",
