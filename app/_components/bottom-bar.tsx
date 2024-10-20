@@ -1,12 +1,10 @@
-"use server";
-
 import { GITHUB } from "../_constants/names";
 import { ROUTES } from "../_constants/routes";
 import { Dictionary } from "../_dictionaries/type";
 import DocExchangeTitle from "./docexchange-title";
 import LinkText from "./link-text";
 
-export default async function BottomBar({ dict }: { dict: Dictionary }) {
+export default function BottomBar({ dict }: { dict: Dictionary }) {
     return (
         <div className="p-10 grid md:grid-cols-4 gap-10 justify-self-end text-lg border-t mb-10">
             <div className="flex flex-col space-y-2">
