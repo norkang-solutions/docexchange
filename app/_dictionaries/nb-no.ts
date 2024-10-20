@@ -3,6 +3,10 @@ import { Dictionary } from "./type";
 
 export const nbNO: Dictionary = {
     hello_world: "Hei verden!",
+
+    // metadata
+    docexchangeio_a_student_powered_study_platform: `${COMPANY_NAME} - en studentdrevet studieplattform`,
+
     // auth
     email: "E-post",
     username: "Brukernavn",
