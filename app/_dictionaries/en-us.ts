@@ -3,6 +3,10 @@ import { Dictionary } from "./type";
 
 export const enUS: Dictionary = {
     hello_world: "Hello world!",
+
+    // metadata
+    docexchangeio_a_student_powered_study_platform: `${COMPANY_NAME} - a student-powered study platform`,
+
     // auth
     email: "Email",
     username: "Username",

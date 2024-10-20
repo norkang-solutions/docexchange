@@ -5,6 +5,7 @@ import { AuthProvider } from "@/app/_contexts/auth-context";
 import { getDictionary } from "@/app/dictionaries";
 import { LangParams } from "@/app/_utils/types";
 import BottomBar from "@/app/_components/bottom-bar";
+import { getPageMetadata } from "@/app/_utils/metadata";
 
 const geistSans = localFont({
     src: "../../fonts/GeistVF.woff",
@@ -16,6 +17,8 @@ const geistMono = localFont({
     variable: "--font-geist-mono",
     weight: "100 900",
 });
+
+export const generateMetadata = getPageMetadata();
 
 export default function RootLayout({
     params: { lang },

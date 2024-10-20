@@ -1,6 +1,9 @@
 export type Dictionary = {
     hello_world: string;
 
+    // metadata
+    docexchangeio_a_student_powered_study_platform: string;
+
     // auth
     email: string;
     username: string;

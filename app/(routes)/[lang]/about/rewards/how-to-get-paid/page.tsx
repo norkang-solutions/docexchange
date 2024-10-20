@@ -3,6 +3,9 @@ import AboutTemplate from "@/app/(routes)/[lang]/about/about-template";
 import { ROUTES } from "@/app/_constants/routes";
 import { LangParams } from "@/app/_utils/types";
 import Link from "next/link";
+import { getPageMetadata } from "@/app/_utils/metadata";
+
+export const generateMetadata = getPageMetadata(dict => dict.how_to_get_paid);
 
 export default function HowToGetPaid({ params: { lang } }: LangParams) {
     const dict = getDictionary(lang);

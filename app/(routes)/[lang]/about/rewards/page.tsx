@@ -1,7 +1,12 @@
 import { ROUTES } from "@/app/_constants/routes";
+import { getPageMetadata } from "@/app/_utils/metadata";
 import { LangParams } from "@/app/_utils/types";
 import { getDictionary } from "@/app/dictionaries";
 import AboutTemplate from "../about-template";
+
+export const generateMetadata = getPageMetadata(
+    dict => dict.student_rewards_program
+);
 
 export default function AboutStudentRewardsProgram({
     params: { lang },
