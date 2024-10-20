@@ -82,7 +82,7 @@ export default function NavBar({ dict }: NavBarProps) {
             {isMobileMenuOpen && (
                 <div
                     id="mobile-menu"
-                    className="absolute top-full left-0 w-full bg-white md:hidden"
+                    className="absolute top-full left-0 w-full bg-white md:hidden z-10"
                 >
                     <ul className="flex flex-col items-center gap-4 p-4">
                         {renderLinks}
