@@ -1,7 +1,7 @@
 import TextDescriptionCard from "@/app/_components/text-description-card";
 import { ReactNode } from "react";
 
-type Card = {
+export type Card = {
     title: string;
     description: string;
     link: string;

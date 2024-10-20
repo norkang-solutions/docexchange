@@ -66,4 +66,10 @@ export const nbNO: Dictionary = {
         "Vi bruker Stripe til å betale brukerne våre. Du kan koble Stripe-kontoen din og få betalt direkte til bankkontoen din. Du kan gjøre dette på ditt ",
     note_that_you_have_to_connect_your_stripe_account:
         ". Merk at du må koble til Stripe-kontoen din før du kan få betalt. Du vil ikke bli betalt for bruken av opplastingene dine før du kobler Stripe-kontoen. Deretter vil du bli betalt ved neste betalingsperiode.",
+    legal: "Juridisk",
+    on_this_page_you_can_find_information_about_who_we_are:
+        "På denne siden kan du finne informasjon om hvem vi er",
+    this_section_describes_our_legal_policies:
+        "Denne siden beskriver våre juridiske retningslinjer",
+    read_more_about_our_rewards_program: "Les mer om vårt belønningsprogram",
 };

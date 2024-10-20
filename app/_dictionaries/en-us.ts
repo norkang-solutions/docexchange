@@ -69,4 +69,10 @@ export const enUS: Dictionary = {
         "We use Stripe to pay our users. You can connect your Stripe account and get paid directly to your bank account, you can do this on your ",
     note_that_you_have_to_connect_your_stripe_account:
         ". Note that you have to connect your Stripe account before you can get paid. You will not be paid for the use of your uploads until you connect your Stripe account. Then you will be paid on the next payment cycle.",
+    legal: "Legal",
+    on_this_page_you_can_find_information_about_who_we_are:
+        "On this page you can find information about who we are",
+    this_section_describes_our_legal_policies:
+        "This section describes our legal policies",
+    read_more_about_our_rewards_program: "Read more about our rewards program",
 };

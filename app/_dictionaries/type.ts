@@ -53,4 +53,8 @@ export type Dictionary = {
     we_use_stripe_to_pay_our_users: string;
     dashboard: string;
     note_that_you_have_to_connect_your_stripe_account: string;
+    legal: string;
+    on_this_page_you_can_find_information_about_who_we_are: string;
+    this_section_describes_our_legal_policies: string;
+    read_more_about_our_rewards_program: string;
 };
