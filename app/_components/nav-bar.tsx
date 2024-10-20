@@ -8,9 +8,9 @@ import Button from "./button";
 import { ROUTES } from "../_constants/routes";
 import { useAuth } from "../_contexts/auth-context";
 import LoadingSpinner from "./loading-spinner";
-import { COMPANY_NAME } from "../_constants/names";
 import HamburgerIcon from "./icons/hamburger-icon";
 import { Dictionary } from "../_dictionaries/type";
+import DocExchangeTitle from "./docexchange-title";
 
 export default function NavBar({ dict }: { dict: Dictionary }) {
     const pathname = usePathname();
@@ -60,7 +60,9 @@ export default function NavBar({ dict }: { dict: Dictionary }) {
                 "flex items-center justify-between w-full p-4 bg-white relative"
             )}
         >
-            <Link href={ROUTES.HOME}>{COMPANY_NAME}</Link>
+            <Link href={ROUTES.HOME} className="text-xl">
+                <DocExchangeTitle />
+            </Link>
 
             <button
                 type="button"

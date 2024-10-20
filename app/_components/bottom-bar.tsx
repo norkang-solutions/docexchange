@@ -1,9 +1,9 @@
 "use server";
 
-import { COMPANY_NAME, GITHUB } from "../_constants/names";
+import { GITHUB } from "../_constants/names";
 import { ROUTES } from "../_constants/routes";
 import { Dictionary } from "../_dictionaries/type";
-import DocExchangeLogo from "./icons/doexchange-logo";
+import DocExchangeTitle from "./docexchange-title";
 import LinkText from "./link-text";
 
 export default async function BottomBar({ dict }: { dict: Dictionary }) {
@@ -32,10 +32,7 @@ export default async function BottomBar({ dict }: { dict: Dictionary }) {
                 </LinkText>
                 <LinkText href={ROUTES.SUPPORT_FAQ}>{dict.faq}</LinkText>
             </div>
-            <div className="flex flex-row gap-2 font-bold items-center self-start">
-                <DocExchangeLogo />
-                <p>{COMPANY_NAME}</p>
-            </div>
+            <DocExchangeTitle />
         </div>
     );
 }
