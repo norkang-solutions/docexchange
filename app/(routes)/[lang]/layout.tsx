@@ -26,7 +26,7 @@ export default function RootLayout({
     return (
         <html lang={lang}>
             <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased text-slate-700 max-w-screen-2xl mx-auto`}
+                className={`${geistSans.variable} ${geistMono.variable} antialiased text-slate-700 max-w-screen-xl mx-auto`}
             >
                 <AuthProvider>
                     <NavBar dict={dict} />
