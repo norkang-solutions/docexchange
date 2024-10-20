@@ -22,14 +22,16 @@ export default function About({ params: { lang } }: LangParams) {
             ]}
             title={dict.about_us}
         >
-            <p>{dict.docexchange_is_a_student_powered_study_platform}</p>
+            <p>{dict.docexchangeio_is_a_student_powered_study_platform}</p>
             <p>
                 {
-                    dict.at_docexchange_we_believe_in_the_power_of_collaborative_learning
+                    dict.at_docexchangeio_we_believe_in_the_power_of_collaborative_learning
                 }
             </p>
             <p>
-                {dict.by_the_same_token_docexchange_is_an_open_source_platform}
+                {
+                    dict.by_the_same_token_docexchangeio_is_an_open_source_platform
+                }
             </p>
         </AboutTemplate>
     );

@@ -48,12 +48,12 @@ export const enUS: Dictionary = {
 
     about_us: "About us",
     team: "Team",
-    docexchange_is_a_student_powered_study_platform:
-        "DocExchange is a student-powered study platform. We aim to provide students with a platform where they can share their work and be rewarded as well as access all the best study materials from their peers.",
-    at_docexchange_we_believe_in_the_power_of_collaborative_learning:
-        "At DocExchange, we believe in the power of collaborative learning. Our mission is to transform the traditional learning process by fostering an environment where students can collaborate, share insights, and access varied perspectives on topics they study. By monetizing their shared resources, we encourage students to produce quality content.",
-    by_the_same_token_docexchange_is_an_open_source_platform:
-        "By the same token, DocExchange is an open-source platform. This means that anyone can view, download, modify and share the code used to build DocExchange. Not only does this allow our users to trust the security and privacy of our platform, but it also gives our users a unique opportunity to take part in its future development.",
+    docexchangeio_is_a_student_powered_study_platform:
+        "DocExchange.io is a student-powered study platform. We aim to provide students with a platform where they can share their work and be rewarded as well as access all the best study materials from their peers.",
+    at_docexchangeio_we_believe_in_the_power_of_collaborative_learning:
+        "At DocExchange.io, we believe in the power of collaborative learning. Our mission is to transform the traditional learning process by fostering an environment where students can collaborate, share insights, and access varied perspectives on topics they study. By monetizing their shared resources, we encourage students to produce quality content.",
+    by_the_same_token_docexchangeio_is_an_open_source_platform:
+        "By the same token, DocExchange.io is an open-source platform. This means that anyone can view, download, modify and share the code used to build DocExchange.io. Not only does this allow our users to trust the security and privacy of our platform, but it also gives our users a unique opportunity to take part in its future development.",
     get_to_know_our_team: "Get to know our team",
     source_code: "Source code",
     check_out_our_source_code_on_github: "Check out our source code on GitHub",
@@ -67,7 +67,6 @@ export const enUS: Dictionary = {
         "Learn how you can start receiving rewards",
     we_use_stripe_to_pay_our_users:
         "We use Stripe to pay our users. You can connect your Stripe account and get paid directly to your bank account, you can do this on your ",
-    dashboard: "dashboard",
     note_that_you_have_to_connect_your_stripe_account:
         ". Note that you have to connect your Stripe account before you can get paid. You will not be paid for the use of your uploads until you connect your Stripe account. Then you will be paid on the next payment cycle.",
 };

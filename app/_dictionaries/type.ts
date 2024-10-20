@@ -18,7 +18,6 @@ export type Dictionary = {
     // nav
     contribute_documents: string;
     explore: string;
-    dashboard: string;
 
     // zod
     invalid_email_address: string;
@@ -39,9 +38,9 @@ export type Dictionary = {
 
     // about
     about_us: string;
-    docexchange_is_a_student_powered_study_platform: string;
-    at_docexchange_we_believe_in_the_power_of_collaborative_learning: string;
-    by_the_same_token_docexchange_is_an_open_source_platform: string;
+    docexchangeio_is_a_student_powered_study_platform: string;
+    at_docexchangeio_we_believe_in_the_power_of_collaborative_learning: string;
+    by_the_same_token_docexchangeio_is_an_open_source_platform: string;
     source_code: string;
     check_out_our_source_code_on_github: string;
     team: string;
