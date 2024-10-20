@@ -57,4 +57,14 @@ export type Dictionary = {
     on_this_page_you_can_find_information_about_who_we_are: string;
     this_section_describes_our_legal_policies: string;
     read_more_about_our_rewards_program: string;
+    support: string;
+    faq: string;
+    contact_us: string;
+    privacy_policy_title: string;
+    terms_and_conditions_title: string;
+
+    // bottom bar
+    company: string;
+    social: string;
+    help: string;
 };
