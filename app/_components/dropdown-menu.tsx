@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ReactNode, useState } from "react";
-import ArrowDownIcon from "../_assets/icons/arrow-down-icon";
+import ArrowDownIcon from "@/app/_components/icons/arrow-down-icon";
 
 type DropdownMenuProps = {
     title: string;
