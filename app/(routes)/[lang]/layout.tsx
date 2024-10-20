@@ -1,11 +1,10 @@
-"use client";
-
 import localFont from "next/font/local";
 import "../../globals.css";
 import NavBar from "@/app/_components/nav-bar";
 import { AuthProvider } from "@/app/_contexts/auth-context";
 import { getDictionary } from "@/app/dictionaries";
 import { LangParams } from "@/app/_utils/types";
+import BottomBar from "@/app/_components/bottom-bar";
 
 const geistSans = localFont({
     src: "../../fonts/GeistVF.woff",
@@ -30,7 +29,8 @@ export default function RootLayout({
             >
                 <AuthProvider>
                     <NavBar dict={dict} />
-                    {children}
+                    <main className="min-h-screen">{children}</main>
+                    <BottomBar dict={dict} />
                 </AuthProvider>
             </body>
         </html>

@@ -1,4 +1,4 @@
-import { COMPANY_NAME } from "../_constants/names";
+import { COMPANY_NAME, GITHUB } from "../_constants/names";
 import { Dictionary } from "./type";
 
 export const enUS: Dictionary = {
@@ -55,7 +55,7 @@ export const enUS: Dictionary = {
     by_the_same_token_docexchangeio_is_an_open_source_platform: `By the same token, ${COMPANY_NAME} is an open-source platform. This means that anyone can view, download, modify and share the code used to build ${COMPANY_NAME}. Not only does this allow our users to trust the security and privacy of our platform, but it also gives our users a unique opportunity to take part in its future development.`,
     get_to_know_our_team: "Get to know our team",
     source_code: "Source code",
-    check_out_our_source_code_on_github: "Check out our source code on GitHub",
+    check_out_our_source_code_on_github: `Check out our source code on ${GITHUB}`,
     are_you_interested_in_joining_our_team:
         "Are you interested in joining our team? Then contact one of us!",
     student_rewards_program: "Student rewards program",
@@ -74,4 +74,14 @@ export const enUS: Dictionary = {
     this_section_describes_our_legal_policies:
         "This section describes our legal policies",
     read_more_about_our_rewards_program: "Read more about our rewards program",
+    support: "Support",
+    faq: "FAQ",
+    contact_us: "Contact us",
+    terms_and_conditions_title: "Terms and conditions",
+    privacy_policy_title: "Privacy policy",
+
+    // bottom bar
+    company: "Company",
+    social: "Social",
+    help: "Help",
 };
