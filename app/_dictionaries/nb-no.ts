@@ -21,6 +21,7 @@ export const nbNO: Dictionary = {
     contribute_documents: "Bidra med dokumenter",
     explore: "Utforsk",
     dashboard: "Dashbord",
+    your_profile: "Din profil",
 
     // zod
     invalid_email_address: "Ugyldig e-postadresse",

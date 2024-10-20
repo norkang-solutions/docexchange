@@ -18,6 +18,7 @@ export type Dictionary = {
     // nav
     contribute_documents: string;
     explore: string;
+    your_profile: string;
 
     // zod
     invalid_email_address: string;

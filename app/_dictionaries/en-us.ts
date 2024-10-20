@@ -21,6 +21,7 @@ export const enUS: Dictionary = {
     contribute_documents: "Contribute documents",
     explore: "Explore",
     dashboard: "Dashboard",
+    your_profile: "Your profile",
 
     // zod
     invalid_email_address: "Invalid email address",
