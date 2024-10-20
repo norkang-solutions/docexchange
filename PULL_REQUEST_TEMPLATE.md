@@ -8,3 +8,4 @@
 -   [ ] Has both English and Norwegian translations
 -   [ ] Check with logged-in vs. logged-out users
 -   [ ] Check with subscribed vs. non-subscribed users
+-   [ ] Includes license and attribution for any third-party assets
