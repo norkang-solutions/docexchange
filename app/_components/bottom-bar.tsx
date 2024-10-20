@@ -6,7 +6,7 @@ import LinkText from "./link-text";
 
 export default function BottomBar({ dict }: { dict: Dictionary }) {
     return (
-        <div className="p-10 grid md:grid-cols-4 gap-10 justify-self-end text-lg border-t mb-10">
+        <div className="p-10 grid md:grid-cols-4 gap-10 w-full mx-auto text-lg border-t mb-10">
             <div className="flex flex-col space-y-2">
                 <p className="font-bold">{dict.company}</p>
                 <LinkText href={ROUTES.ABOUT_US}>{dict.about_us}</LinkText>
