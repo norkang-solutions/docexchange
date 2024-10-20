@@ -6,6 +6,7 @@ import NavBar from "@/app/_components/nav-bar";
 import { AuthProvider } from "@/app/_contexts/auth-context";
 import { getDictionary } from "@/app/dictionaries";
 import { LangParams } from "@/app/_utils/types";
+import TanstackQueryProvider from "@/app/_contexts/query-provider";
 
 const geistSans = localFont({
     src: "../../fonts/GeistVF.woff",
@@ -29,8 +30,10 @@ export default function RootLayout({
                 className={`${geistSans.variable} ${geistMono.variable} antialiased text-slate-700 max-w-screen-xl mx-auto`}
             >
                 <AuthProvider>
-                    <NavBar dict={dict} />
-                    {children}
+                    <TanstackQueryProvider>
+                        <NavBar dict={dict} />
+                        {children}
+                    </TanstackQueryProvider>
                 </AuthProvider>
             </body>
         </html>
