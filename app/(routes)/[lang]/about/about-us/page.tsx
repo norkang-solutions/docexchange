@@ -17,7 +17,7 @@ export default function About({ params: { lang } }: LangParams) {
                 {
                     title: dict.source_code,
                     description: dict.check_out_our_source_code_on_github,
-                    link: "https://github.com/norkang-solutions/docexchange",
+                    link: ROUTES.GITHUB_REPO,
                 },
             ]}
             title={dict.about_us}

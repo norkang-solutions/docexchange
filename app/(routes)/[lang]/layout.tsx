@@ -1,5 +1,3 @@
-"use client";
-
 import localFont from "next/font/local";
 import "../../globals.css";
 import NavBar from "@/app/_components/nav-bar";
@@ -7,6 +5,8 @@ import { AuthProvider } from "@/app/_contexts/auth-context";
 import { getDictionary } from "@/app/dictionaries";
 import { LangParams } from "@/app/_utils/types";
 import TanstackQueryProvider from "@/app/_contexts/query-provider";
+import BottomBar from "@/app/_components/bottom-bar";
+import { getPageMetadata } from "@/app/_utils/metadata";
 
 const geistSans = localFont({
     src: "../../fonts/GeistVF.woff",
@@ -18,6 +18,8 @@ const geistMono = localFont({
     variable: "--font-geist-mono",
     weight: "100 900",
 });
+
+export const generateMetadata = getPageMetadata();
 
 export default function RootLayout({
     params: { lang },
@@ -32,7 +34,8 @@ export default function RootLayout({
                 <AuthProvider>
                     <TanstackQueryProvider>
                         <NavBar dict={dict} />
-                        {children}
+                        <main className="min-h-screen">{children}</main>
+                        <BottomBar dict={dict} />
                     </TanstackQueryProvider>
                 </AuthProvider>
             </body>

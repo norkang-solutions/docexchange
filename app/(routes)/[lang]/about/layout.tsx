@@ -2,6 +2,9 @@ import { LayoutProps } from "@/app/_utils/types";
 import SideMenuLayout from "@/app/_components/layouts/side-menu-layout";
 import { ROUTES } from "@/app/_constants/routes";
 import { getDictionary } from "@/app/dictionaries";
+import { getPageMetadata } from "@/app/_utils/metadata";
+
+export const generateMetadata = getPageMetadata(dict => dict.about_us);
 
 export default function AboutLayout({
     params: { lang },

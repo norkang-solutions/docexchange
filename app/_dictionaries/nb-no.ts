@@ -1,8 +1,12 @@
-import { COMPANY_NAME } from "../_constants/names";
+import { COMPANY_NAME, GITHUB } from "../_constants/names";
 import { Dictionary } from "./type";
 
 export const nbNO: Dictionary = {
     hello_world: "Hei verden!",
+
+    // metadata
+    docexchangeio_a_student_powered_study_platform: `${COMPANY_NAME} - en studentdrevet studieplattform`,
+
     // auth
     email: "E-post",
     username: "Brukernavn",
@@ -62,7 +66,7 @@ export const nbNO: Dictionary = {
     by_the_same_token_docexchangeio_is_an_open_source_platform: `Fordi vi tror på deling og åpenhet, er ${COMPANY_NAME} en open-source plattform. Dette vil si at alle kan se, laste ned, modifisere og dele koden som ble brukt til å bygge ${COMPANY_NAME}, noe som gjør det ikke bare lettere for brukerne våre å stole på sikkerheten og personvernet til plattformen vår, men det gir også brukerne våre en unik mulighet til å delta aktivt i videre utvikling av plattformen.`,
     get_to_know_our_team: "Bli kjent med teamet vårt",
     source_code: "Kildekode",
-    check_out_our_source_code_on_github: "Sjekk ut koden vår på GitHub",
+    check_out_our_source_code_on_github: `Sjekk ut koden vår på ${GITHUB}`,
     are_you_interested_in_joining_our_team:
         "Er du interessert i å bli med i teamet vårt? I så fall, ta kontakt med en av oss!",
     student_rewards_program: "Belønningsprogram for studenter",
@@ -81,4 +85,14 @@ export const nbNO: Dictionary = {
     this_section_describes_our_legal_policies:
         "Denne siden beskriver våre juridiske retningslinjer",
     read_more_about_our_rewards_program: "Les mer om vårt belønningsprogram",
+    support: "Kundestøtte",
+    faq: "FAQ",
+    contact_us: "Kontakt oss",
+    terms_and_conditions_title: "Vilkår for bruk",
+    privacy_policy_title: "Personvernerklæring",
+
+    // bottom bar
+    company: "Bedrift",
+    social: "Sosialt",
+    help: "Hjelp",
 };

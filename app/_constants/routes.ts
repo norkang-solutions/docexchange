@@ -14,4 +14,8 @@ export enum ROUTES {
     ABOUT_REWARDS_HOW_TO_GET_PAID = `${ABOUT_REWARDS}/how-to-get-paid`,
     ABOUT_LEGAL = `${ABOUT}/legal`,
     PROFILE = `${DASHBOARD}/profile`,
+    SUPPORT = "/support",
+    SUPPORT_FAQ = `${SUPPORT}/faq`,
+    SUPPORT_CONTACT = `${SUPPORT}/contact-us`,
+    GITHUB_REPO = "https://github.com/norkang-solutions/docexchange",
 }

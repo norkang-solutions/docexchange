@@ -1,7 +1,10 @@
+import { getPageMetadata } from "@/app/_utils/metadata";
 import { LangParams } from "@/app/_utils/types";
 import { getDictionary } from "@/app/dictionaries";
 import AboutTemplate from "../../about-template";
 import TeamMemberCard from "./team-member-card";
+
+export const generateMetadata = getPageMetadata(dict => dict.team);
 
 export default function AboutTeam({ params: { lang } }: LangParams) {
     const dict = getDictionary(lang);

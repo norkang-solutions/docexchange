@@ -1,11 +1,9 @@
-import { Metadata } from "next";
+import { getPageMetadata } from "@/app/_utils/metadata";
 import { LangParams } from "@/app/_utils/types";
 import { getDictionary } from "@/app/dictionaries";
 import SignInForm from "./form";
 
-export const metadata: Metadata = {
-    title: "Sign In",
-};
+export const generateMetadata = getPageMetadata(dict => dict.sign_in);
 
 export default function SignInPage({ params: { lang } }: LangParams) {
     const dict = getDictionary(lang);
