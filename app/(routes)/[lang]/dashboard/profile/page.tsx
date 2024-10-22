@@ -1,4 +1,5 @@
 import Button from "@/app/_components/button";
+import Divider from "@/app/_components/divider";
 import { LangParams } from "@/app/_utils/types";
 import { getDictionary } from "@/app/dictionaries";
 import UpdateUserForm from "./update-user-form";
@@ -14,11 +15,7 @@ export default function Profile({ params: { lang } }: LangParams) {
             <div className="flex flex-col gap-4 max-w-sm w-full">
                 <UpdateUserForm dict={dict} />
 
-                <div className="flex gap-2 items-center w-full">
-                    <div className="h-0.5 bg-slate-200 rounded-lg w-full" />
-                    <p className="text-slate-500">{dict.or}</p>
-                    <div className="h-0.5 bg-slate-200 rounded-lg w-full" />
-                </div>
+                <Divider text={dict.or} />
 
                 <SignOutButton dict={dict} />
 
