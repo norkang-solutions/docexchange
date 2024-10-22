@@ -15,6 +15,16 @@ export type Dictionary = {
     do_you_already_have_an_account: string;
     do_you_not_have_an_account: string;
 
+    // profile
+    save: string;
+    delete_account: string;
+    or: string;
+    sign_out: string;
+    change_password: string;
+    error_fetching_user_data: string;
+    user_updated: string;
+    error_updating_user: string;
+
     // nav
     contribute_documents: string;
     explore: string;
