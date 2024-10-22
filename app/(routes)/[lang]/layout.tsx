@@ -4,6 +4,7 @@ import NavBar from "@/app/_components/nav-bar";
 import { AuthProvider } from "@/app/_contexts/auth-context";
 import { getDictionary } from "@/app/dictionaries";
 import { LangParams } from "@/app/_utils/types";
+import TanstackQueryProvider from "@/app/_contexts/query-provider";
 import BottomBar from "@/app/_components/bottom-bar";
 import { getPageMetadata } from "@/app/_utils/metadata";
 
@@ -28,12 +29,14 @@ export default function RootLayout({
     return (
         <html lang={lang}>
             <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased text-slate-700 max-w-screen-2xl mx-auto`}
+                className={`${geistSans.variable} ${geistMono.variable} antialiased text-slate-700 max-w-screen-xl mx-auto`}
             >
                 <AuthProvider>
-                    <NavBar dict={dict} />
-                    <main className="min-h-screen">{children}</main>
-                    <BottomBar dict={dict} />
+                    <TanstackQueryProvider>
+                        <NavBar dict={dict} />
+                        <main className="min-h-screen">{children}</main>
+                        <BottomBar dict={dict} />
+                    </TanstackQueryProvider>
                 </AuthProvider>
             </body>
         </html>

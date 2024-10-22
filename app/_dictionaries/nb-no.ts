@@ -21,10 +21,21 @@ export const nbNO: Dictionary = {
     do_you_already_have_an_account: "Har du allerede en konto?",
     do_you_not_have_an_account: "Har du ikke en konto?",
 
+    // profile
+    save: "Lagre",
+    delete_account: "Slett konto",
+    or: "eller",
+    sign_out: "Logg ut",
+    change_password: "Endre passord",
+    error_fetching_user_data: "Feil ved henting av brukerdata",
+    user_updated: "Brukeren er oppdatert",
+    error_updating_user: "Feil ved oppdatering av bruker",
+
     // nav
     contribute_documents: "Bidra med dokumenter",
     explore: "Utforsk",
     dashboard: "Dashbord",
+    your_profile: "Din profil",
 
     // zod
     invalid_email_address: "Ugyldig e-postadresse",

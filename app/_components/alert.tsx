@@ -7,10 +7,10 @@ type AlertProps = React.HTMLAttributes<HTMLDivElement> & {
 
 export default function Alert({ children, type, ...props }: AlertProps) {
     const bgColor = {
-        info: "bg-blue-50",
-        success: "bg-emerald-50",
-        warning: "bg-yellow-50",
-        error: "bg-red-50",
+        info: "bg-blue-50 text-blue-800",
+        success: "bg-emerald-50 text-emerald-800",
+        warning: "bg-yellow-50 text-yellow-800",
+        error: "bg-red-50 text-red-800",
     };
 
     return (

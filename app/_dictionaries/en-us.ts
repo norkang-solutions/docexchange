@@ -21,10 +21,21 @@ export const enUS: Dictionary = {
     do_you_already_have_an_account: "Do you already have an account?",
     do_you_not_have_an_account: "Do you not have an account?",
 
+    // profile
+    save: "Save",
+    delete_account: "Delete account",
+    or: "or",
+    sign_out: "Sign out",
+    change_password: "Change password",
+    error_fetching_user_data: "Error fetching user data",
+    user_updated: "User updated",
+    error_updating_user: "Error updating user",
+
     // nav
     contribute_documents: "Contribute documents",
     explore: "Explore",
     dashboard: "Dashboard",
+    your_profile: "Your profile",
 
     // zod
     invalid_email_address: "Invalid email address",

@@ -31,7 +31,7 @@ export default function DropdownMenu({
                     {title}
                 </p>
                 <ArrowDownIcon
-                    className={`ml-auto rotate-[270deg] transition-transform duration-300 w-4 h-4 ${
+                    className={`ml-auto rotate-[270deg] transition-transform duration-300 w-4 h-4 shrink-0 ${
                         open ? "transform rotate-[360deg]" : ""
                     }`}
                 />
