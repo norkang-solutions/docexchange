@@ -69,9 +69,9 @@ export default function useUpdateUser() {
         ...mutation,
         errors,
         defaultUsername,
-        isLoading: mutation.isLoading || userIsLoading,
         usernameInput,
         setUsernameInput,
         success,
+        isLoading: mutation.isLoading || userIsLoading,
     };
 }
