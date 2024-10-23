@@ -12,6 +12,8 @@ import Link from "next/link";
 import { Dictionary } from "@/app/_dictionaries/type";
 import { ROUTES } from "@/app/_constants/routes";
 import { useRouter } from "next/navigation";
+import useSignInWithGoogle from "@/app/_hooks/use-sign-in-with-google";
+import GoogleButton from "../google-button";
 
 type SignUpFormProps = FormHTMLAttributes<HTMLFormElement> & {
     dict: Dictionary;
@@ -23,6 +25,11 @@ export default function SignUpForm({ dict, ...props }: SignUpFormProps) {
 
     const { user, loading: isLoadingUser } = useAuth();
     const { signUp, isLoading, errors } = useSignUp();
+    const {
+        signInWithGoogle,
+        error: errorSigningInWithGoogle,
+        isLoading: isLoadingGoogleSignIn,
+    } = useSignInWithGoogle();
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -30,7 +37,7 @@ export default function SignUpForm({ dict, ...props }: SignUpFormProps) {
         signUp(formData);
     };
 
-    if (user) {
+    if (user && !isLoadingGoogleSignIn) {
         router.push(ROUTES.DASHBOARD);
         return null;
     }
@@ -99,7 +106,17 @@ export default function SignUpForm({ dict, ...props }: SignUpFormProps) {
             <Button type="submit" disabled={isLoading || !!user}>
                 {isLoading ? <LoadingSpinner /> : "Sign Up"}
             </Button>
+            <GoogleButton
+                isLoading={isLoadingGoogleSignIn}
+                onClick={signInWithGoogle}
+                disabled={isLoadingGoogleSignIn || isLoading}
+            >
+                {dict.sign_up_with_google}
+            </GoogleButton>
             {errors?.unknown && <ErrorP>{dict[errors.unknown]}</ErrorP>}
+            {errorSigningInWithGoogle && (
+                <ErrorP>{dict.error_signing_in_with_google}</ErrorP>
+            )}
 
             <p className="text-center text-base font-medium text-slate-700">
                 {dict.do_you_already_have_an_account}{" "}
