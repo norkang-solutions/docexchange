@@ -12,8 +12,8 @@ import Link from "next/link";
 import { Dictionary } from "@/app/_dictionaries/type";
 import { ROUTES } from "@/app/_constants/routes";
 import { useRouter } from "next/navigation";
-import GoogleIcon from "@/app/_components/icons/google-icon";
 import useSignInWithGoogle from "@/app/_hooks/use-sign-in-with-google";
+import GoogleButton from "../google-button";
 
 type SignUpFormProps = FormHTMLAttributes<HTMLFormElement> & {
     dict: Dictionary;
@@ -103,16 +103,9 @@ export default function SignUpForm({ dict, ...props }: SignUpFormProps) {
             <Button type="submit" disabled={isLoading || !!user}>
                 {isLoading ? <LoadingSpinner /> : "Sign Up"}
             </Button>
-            <Button
-                type="button"
-                variant="secondary"
-                onClick={() => signInWithGoogle()}
-            >
-                <div className="flex flex-row items-center gap-2 justify-center">
-                    <GoogleIcon />
-                    <p>{dict.sign_up_with_google}</p>
-                </div>
-            </Button>
+            <GoogleButton onClick={signInWithGoogle}>
+                {dict.sign_up_with_google}
+            </GoogleButton>
             {errors?.unknown && <ErrorP>{dict[errors.unknown]}</ErrorP>}
             {errorSigningInWithGoogle && <ErrorP>google error</ErrorP>}
 
