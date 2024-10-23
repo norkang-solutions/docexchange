@@ -3,6 +3,7 @@ import { auth, functions } from "@/firebase/client";
 import { signInWithPopup } from "firebase/auth";
 import { httpsCallable } from "firebase/functions";
 import { useState } from "react";
+import getUser from "@/firebase/firestore/get-user";
 
 export default function useSignInWithGoogle() {
     const [error, setError] = useState(false);
@@ -10,16 +11,18 @@ export default function useSignInWithGoogle() {
     async function signInWithGoogle() {
         try {
             const {
-                user: { email },
+                user: { email, uid },
             } = await signInWithPopup(auth, googleProvider);
 
-            const createUserOnServer = httpsCallable(functions, "createUser");
-            const username = email!.split("@")[0].replace(".", "_");
+            const username = email!.split("@")[0].replaceAll(".", "_");
+            const user = await getUser(uid);
 
-            try {
+            if (!user) {
+                const createUserOnServer = httpsCallable(
+                    functions,
+                    "createUser"
+                );
                 await createUserOnServer({ username });
-            } catch {
-                // User exists, don't create
             }
         } catch {
             setError(true);
