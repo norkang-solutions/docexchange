@@ -12,6 +12,7 @@ import Link from "next/link";
 import { Dictionary } from "@/app/_dictionaries/type";
 import { ROUTES } from "@/app/_constants/routes";
 import { useRouter } from "next/navigation";
+import GoogleIcon from "@/app/_components/icons/google-icon";
 
 type SignUpFormProps = FormHTMLAttributes<HTMLFormElement> & {
     dict: Dictionary;
@@ -98,6 +99,12 @@ export default function SignUpForm({ dict, ...props }: SignUpFormProps) {
 
             <Button type="submit" disabled={isLoading || !!user}>
                 {isLoading ? <LoadingSpinner /> : "Sign Up"}
+            </Button>
+            <Button type="button" variant="secondary">
+                <div className="flex flex-row items-center gap-2 justify-center">
+                    <GoogleIcon />
+                    <p>{dict.sign_up_with_google}</p>
+                </div>
             </Button>
             {errors?.unknown && <ErrorP>{dict[errors.unknown]}</ErrorP>}
 

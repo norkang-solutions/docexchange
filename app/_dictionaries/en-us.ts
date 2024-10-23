@@ -20,6 +20,8 @@ export const enUS: Dictionary = {
     privacy_policy: "privacy policy",
     do_you_already_have_an_account: "Do you already have an account?",
     do_you_not_have_an_account: "Do you not have an account?",
+    sign_up_with_google: "Sign Up With Google",
+    sign_in_with_google: "Sign In With Google",
 
     // profile
     save: "Save",
