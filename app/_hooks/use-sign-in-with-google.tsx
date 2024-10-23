@@ -7,8 +7,11 @@ import getUser from "@/firebase/firestore/get-user";
 
 export default function useSignInWithGoogle() {
     const [error, setError] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     async function signInWithGoogle() {
+        setIsLoading(true);
+
         try {
             const {
                 user: { email, uid },
@@ -27,7 +30,9 @@ export default function useSignInWithGoogle() {
         } catch {
             setError(true);
         }
+
+        setIsLoading(false);
     }
 
-    return { signInWithGoogle, error };
+    return { signInWithGoogle, error, isLoading };
 }

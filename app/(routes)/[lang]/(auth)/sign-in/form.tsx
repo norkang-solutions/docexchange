@@ -25,8 +25,11 @@ export default function SignInForm({ dict, ...props }: SignInFormProps) {
     const { user, loading: isLoadingUser } = useAuth();
 
     const { signIn, isLoading, errors } = useSignIn();
-    const { signInWithGoogle, error: errorSigningInWithGoogle } =
-        useSignInWithGoogle();
+    const {
+        signInWithGoogle,
+        error: errorSigningInWithGoogle,
+        isLoading: isLoadingGoogleSignIn,
+    } = useSignInWithGoogle();
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -34,7 +37,7 @@ export default function SignInForm({ dict, ...props }: SignInFormProps) {
         signIn(formData);
     };
 
-    if (user) {
+    if (user && !isLoadingGoogleSignIn) {
         router.push(ROUTES.DASHBOARD);
         return null;
     }
@@ -66,7 +69,11 @@ export default function SignInForm({ dict, ...props }: SignInFormProps) {
             <Button type="submit" disabled={isLoading || !!user}>
                 {isLoading ? <LoadingSpinner /> : dict.sign_in}
             </Button>
-            <GoogleButton onClick={signInWithGoogle}>
+            <GoogleButton
+                isLoading={isLoadingGoogleSignIn}
+                onClick={signInWithGoogle}
+                disabled={isLoadingGoogleSignIn || isLoading}
+            >
                 {dict.sign_in_with_google}
             </GoogleButton>
             {errors?.unknown && <ErrorP>{dict[errors.unknown]}</ErrorP>}
