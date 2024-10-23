@@ -19,6 +19,7 @@ export type Dictionary = {
     do_you_not_have_an_account: string;
     sign_up_with_google: string;
     sign_in_with_google: string;
+    error_signing_in_with_google: string;
 
     // profile
     save: string;

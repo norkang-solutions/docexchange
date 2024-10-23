@@ -70,7 +70,9 @@ export default function SignInForm({ dict, ...props }: SignInFormProps) {
                 {dict.sign_in_with_google}
             </GoogleButton>
             {errors?.unknown && <ErrorP>{dict[errors.unknown]}</ErrorP>}
-            {errorSigningInWithGoogle && <ErrorP>google error</ErrorP>}
+            {errorSigningInWithGoogle && (
+                <ErrorP>{dict.error_signing_in_with_google}</ErrorP>
+            )}
 
             <p className="text-center text-base font-medium text-slate-700">
                 {dict.do_you_not_have_an_account}{" "}

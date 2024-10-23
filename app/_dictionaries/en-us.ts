@@ -22,6 +22,7 @@ export const enUS: Dictionary = {
     do_you_not_have_an_account: "Do you not have an account?",
     sign_up_with_google: "Sign Up With Google",
     sign_in_with_google: "Sign In With Google",
+    error_signing_in_with_google: "Error signing in with Google",
 
     // profile
     save: "Save",

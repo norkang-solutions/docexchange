@@ -22,6 +22,7 @@ export const nbNO: Dictionary = {
     do_you_not_have_an_account: "Har du ikke en konto?",
     sign_in_with_google: "Logg inn med Google",
     sign_up_with_google: "Registrer deg med Google",
+    error_signing_in_with_google: "Feil ved Google-innlogging",
 
     // profile
     save: "Lagre",
