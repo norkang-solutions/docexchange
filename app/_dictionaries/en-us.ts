@@ -34,6 +34,14 @@ export const enUS: Dictionary = {
     user_updated: "User updated",
     error_updating_user: "Error updating user",
 
+    // Landing page
+    open_source_web_application_that_lets_you_upload_and_find_academic_work:
+        "Open source web application that lets you upload and find academic work.",
+    as_a_contributor_you_get_paid_based_on_the_popularity_of_your_uploads:
+        "As a contributor you get paid based on the popularity of your uploads.",
+    is_a_student_powered_study_platform: "is a student-powered study platform",
+    contribute_to_the_open_source_project_on: "Contribute to the repository on",
+
     // nav
     contribute_documents: "Contribute documents",
     explore: "Explore",
