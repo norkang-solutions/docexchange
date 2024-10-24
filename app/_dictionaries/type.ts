@@ -28,6 +28,12 @@ export type Dictionary = {
     user_updated: string;
     error_updating_user: string;
 
+    // Landing page
+    open_source_web_application_that_lets_you_upload_and_find_academic_work: string;
+    as_a_contributor_you_get_paid_based_on_the_popularity_of_your_uploads: string;
+    is_a_student_powered_study_platform: string;
+    contribute_to_the_open_source_project_on: string;
+
     // nav
     contribute_documents: string;
     explore: string;

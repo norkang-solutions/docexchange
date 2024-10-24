@@ -31,6 +31,15 @@ export const nbNO: Dictionary = {
     user_updated: "Brukeren er oppdatert",
     error_updating_user: "Feil ved oppdatering av bruker",
 
+    // Landing page
+    open_source_web_application_that_lets_you_upload_and_find_academic_work:
+        "Åpen kildekode-webapplikasjon som lar deg laste opp og finne akademisk arbeid.",
+    as_a_contributor_you_get_paid_based_on_the_popularity_of_your_uploads:
+        "Som bidragsyter får du betalt basert på populariteten til opplastingene dine.",
+    is_a_student_powered_study_platform: "er en studentdrevet studieplattform",
+    contribute_to_the_open_source_project_on:
+        "Bidra til open-source prosjektet på",
+
     // nav
     contribute_documents: "Bidra med dokumenter",
     explore: "Utforsk",
